@@ -306,13 +306,13 @@ echo '<!DOCTYPE html>
                   <div class="form-group row">
                     <label for="exampleInputEmail2" class="col-sm-3 col-form-label">Nom d\'utilisateur Twitter (sans @)</label>
                     <div class="col-sm-9">
-                      <input type="text" class="form-control" id="username" name="username2C" placeholder="[@]:" required=yes>
+                      <input type="text" class="form-control" id="username" name="username2C" placeholder="[@]:" required=no>
                     </div>
                   </div>
                   <div class="form-group row">
                     <label for="exampleInputPassword2" class="col-sm-3 col-form-label">Immatriculation de la licence </label>
                     <div class="col-sm-9">
-                      <input type="text" class="form-control" id="number" name="number" placeholder="N° de licence" required=yes>
+                      <input type="text" class="form-control" id="number" name="number" placeholder="N° de licence" required=no>
                     </div>
                   </div>
 
