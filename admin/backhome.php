@@ -1,3 +1,3 @@
 <?php
- header( "refresh:0;url=administration.php?view" );
+ header( "refresh:0;url=index.php" );
 ?>
