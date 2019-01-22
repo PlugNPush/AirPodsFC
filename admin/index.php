@@ -302,7 +302,7 @@ echo '<!DOCTYPE html>
               <div class="card-body">
                 <h4 class="card-title">Vérifier une licence</h4>
 
-                <form class="forms-sample" action="index.php" method="post">
+                <form class="forms-sample" action="index.php" method="get">
                   <div class="form-group row">
                     <label for="exampleInputEmail2" class="col-sm-3 col-form-label">Nom d\'utilisateur Twitter (sans @)</label>
                     <div class="col-sm-9">
