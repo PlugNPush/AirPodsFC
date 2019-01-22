@@ -66,7 +66,7 @@ echo'
 						<span class="txt1">
 							Cet espace est réservé aux administrateurs du AirPods FC.
 						</span>
-						<a class="txt2" href="index.php">
+						<a class="txt2" href="https://www.airpodsfc.fr/index.php">
 							Retour à l\'accueil
 						</a>
 					</div>
