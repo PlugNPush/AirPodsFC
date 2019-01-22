@@ -306,103 +306,76 @@ echo '<!DOCTYPE html>
                   <div class="form-group row">
                     <label for="exampleInputEmail2" class="col-sm-3 col-form-label">Nom d\'utilisateur Twitter (sans @)</label>
                     <div class="col-sm-9">
-                      <input type="text" class="form-control" id="username2C" name="username2C" placeholder="[@]:" required=yes>
+                      <input type="text" class="form-control" id="username" name="username2C" placeholder="[@]:" required=yes>
                     </div>
                   </div>
                   <div class="form-group row">
-                    <label for="exampleInputPassword2" class="col-sm-3 col-form-label">Date d\'achat </label>
+                    <label for="exampleInputPassword2" class="col-sm-3 col-form-label">Immatriculation de la licence </label>
                     <div class="col-sm-9">
-                      <input type="date" class="form-control" id="date" name="date" placeholder="AAAA-MM-JJ" required=yes>
+                      <input type="text" class="form-control" id="number" name="number" placeholder="N° de licence" required=yes>
                     </div>
                   </div>
 
                   <div class="form-group">
-                    <label for="exampleFormControlSelect3">Type de licence</label>
-                    <select class="form-control form-control-sm" id="type" name="type">
-                    <option value="basic">Classique</option>
-                    <option value="vip">VIP</option>
-                    <option value="red">(RED)</option>
-                    <option value="banned">Banni</option>
+                    <label for="exampleFormControlSelect3">Vérifier avec :</label>
+                    <select class="form-control form-control-sm" id="service" name="service">
+                    <option value="Twitter">Twitter</option>
+                    <option value="Immatriculation">Immatriculation</option>
                     </select>
                   </div>
                   <button type="submit" class="btn btn-success mr-2">Vérifier la licence</button>
                 </form>
               ';
 
-          if (isset($_POST['username2C']) && isset($_POST['date'])){
-            $req = $bdd->prepare('INSERT INTO licences(user, purchase, number, status) VALUES(:user, :purchase, :number, :status)');
-            if ($_POST['type'] == "basic" || $_POST['type'] == "banned"){
-              $number = rand(3000000, 9999999);
-            } else if ($_POST['type'] == "vip" || $_POST['type'] == "red"){
-              // 1st step is to check year gap
+              if ($_GET['service'] == "Twitter") {
+                if(isset($_GET['username']) && $_GET['username'] != ""){
+                  $req = $bdd->prepare('SELECT * FROM licences WHERE user = ?;');
+                  $req->execute(array($_GET['username']));
+                  $test = $req->fetch();
 
-              $reqtwo = $bdd->prepare('SELECT * FROM autoincrement;');
-              $reqtwo->execute();
-              $testtwo = $reqtwo->fetch();
+                  $date = date('Y-m-d H:i:s');
 
-              $date = date('Y-m-d H:i:s');
+                  $compareddate = new DateTime($test["purchase"]);
+                  $now = new DateTime();
 
-              $compareddate = new DateTime($testtwo["lastincrement"]);
-              $now = new DateTime();
-
-              $compare = $compareddate->format('Y');
-              $compare2 = $now->format('Y');
-
-              if ($compare != $compare2){
-                $reqthree = $bdd->prepare('UPDATE autoincrement SET vip = 0;');
-                $reqthree->execute();
-                $reqthree = $bdd->prepare('UPDATE autoincrement SET red = 0;');
-                $reqthree->execute();
-              }
-
-              if ($_POST['type'] == "vip"){
-                $reqfour = $bdd->prepare('UPDATE autoincrement SET vip = vip + 1;');
-                $reqfour->execute();
-                $countfour = $reqfour->rowCount();
-                $number = $compare2 . str_pad($testtwo['vip'] + 1, 3, '0', STR_PAD_LEFT);
-                $reqfive = $bdd->prepare('UPDATE autoincrement SET lastincrement = ?;');
-                $send = $now->format('Y-m-d H:i:s');
-                $reqfive->execute(array($date));
-
-              }
-
-              if ($_POST['type'] == "red"){
-                $reqfour = $bdd->prepare('UPDATE autoincrement SET red = red + 1;');
-                $reqfour->execute();
-                $countfour = $reqfour->rowCount();
-                $number = $compare2 . "PR" . str_pad($testtwo['red'] + 1, 3, '0', STR_PAD_LEFT);
-                $reqfive = $bdd->prepare('UPDATE autoincrement SET lastincrement = ?;');
-                $send = $now->format('Y-m-d H:i:s');
-                $reqfive->execute(array($date));
-
-              }
-
-
-
-            }
-
-                $req->execute(array(
-                'user' => $_POST['username2C'],
-                'purchase' => $date,
-                'number' => $number,
-                'status' => $_POST['type']
-                ));
-
-                $count = $req->rowCount();
-
-                if ($count == 0){
-                  if ($_POST['type'] == "red" && $countfour > 0){
-                    $reqsix = $bdd->prepare('UPDATE autoincrement SET red = red - 1;');
-                    $reqsix->execute();
-                  }
-                  if ($_POST['type'] == "vip" && $countfour > 0){
-                    $reqsix = $bdd->prepare('UPDATE autoincrement SET red = red - 1;');
-                    $reqsix->execute();
-                  }
+                  if (isset($test['id'])){
+                  echo '<br><p>Titulaire de la licence :</p> <h3>@' . $test['user'] . '</h3>';
+                  echo '<br>IMMATRICULATION DE LA LICENCE : <h4>' . ltrim($test['number'], '0') . '</h4>';
+                  echo '<br><p>Titulaire depuis ' . $compareddate->diff($now)->format("%y ans, %m mois, %d jours, %h heures et %i minutes</p>");
+                  echo '<br><a href="sign.php?id=' . $test['user'] . '"><img src="sign.php?id=' . $test['user'] . '" height="50%" width="100%" style="border-radius: 7px; overflow:hidden;"></a>';
                 }
-
-                echo '<h2 class="card-title"><br><br>La licence a bien été signée pour @' . $_POST['username2C'] . '!</h2><br><h3 class="card-description">LICENCE NUMÉRO ' . $number . '<br><a href="/../AirPodsFC/sign.php?id=' . $_POST['username2C'] . '"><img src="/../AirPodsFC/sign.php?id=' . $_POST['username2C'] . '" height="20%" width="30%" style="border-radius: 7px; overflow:hidden;"></a>';
+                else {
+                  // echo '<br><h2>LICENCE NON TROUVÉE !</h2>';
+                  echo '<br><p>Aucune licence n\'a été délivrée par l\'équipe de validation du AirPods FC à @' . ltrim($_GET['username'], '0') . '.</p>';
+                  echo '<br><a href="sign.php?id=' . $test['user'] . '"><img src="sign.php?id=' . $test['user'] . '" height="50%" width="100%" style="border-radius: 7px; overflow:hidden;"></a>';
+                }
+      echo '<br><br><p><a href="index.php">< retour</a></p> ';
+                }
               }
+
+              else if ($_GET['service'] == "Immatriculation") {
+                if(isset($_GET['number']) && $_GET['number'] != ""){
+                  $req = $bdd->prepare('SELECT * FROM licences WHERE number = ?;');
+                  $req->execute(array($_GET['number']));
+                  $test = $req->fetch();
+
+                  $date = date('Y-m-d H:i:s');
+
+                  $compareddate = new DateTime($test["purchase"]);
+                  $now = new DateTime();
+                  if (isset($test['id'])){
+                  echo '<br><p>Titulaire de la licence :</p> <h3>@' . $test['user'] . '</h3>';
+                  echo '<br>IMMATRICULATION DE LA LICENCE : <h4>' . ltrim($test['number'], '0') . '</h4>';
+                  echo '<br><p>Titulaire depuis ' . $compareddate->diff($now)->format("%y ans, %m mois, %d jours, %h heures et %i minutes</p>");
+                  echo '<br><a href="sign.php?id=' . $test['user'] . '"><img src="sign.php?id=' . $test['user'] . '" height="50%" width="100%" style="border-radius: 7px; overflow:hidden;"></a>';
+                }
+                else {
+                  // echo '<br><h2>LICENCE NON TROUVÉE !</h2>';
+                  echo '<br><p>Aucune licence n\'a été délivrée par l\'équipe de validation du AirPods FC à @' . ltrim($_GET['username'], '0') . '.</p>';
+                  echo '<br><a href="sign.php?id=' . $test['user'] . '"><img src="sign.php?id=' . $test['user'] . '" height="50%" width="100%" style="border-radius: 7px; overflow:hidden;"></a>';
+                }
+                  echo '<br><br><p><a href="index.php">< retour</a></p> ';
+              } else { echo 'error in licence transfer.';}}
 
 
           echo '</div>
