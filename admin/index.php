@@ -306,7 +306,7 @@ echo '<!DOCTYPE html>
                   <div class="form-group row">
                     <label for="exampleInputEmail2" class="col-sm-3 col-form-label">Nom d\'utilisateur Twitter (sans @)</label>
                     <div class="col-sm-9">
-                      <input type="text" class="form-control" id="username" name="username2C" placeholder="[@]:">
+                      <input type="text" class="form-control" id="username" name="username" placeholder="[@]:">
                     </div>
                   </div>
                   <div class="form-group row">
