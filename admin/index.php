@@ -342,12 +342,12 @@ echo '<!DOCTYPE html>
                   echo '<br><p>Titulaire de la licence :</p> <h3>@' . $test['user'] . '</h3>';
                   echo '<br>IMMATRICULATION DE LA LICENCE : <h4>' . ltrim($test['number'], '0') . '</h4>';
                   echo '<br><p>Titulaire depuis ' . $compareddate->diff($now)->format("%y ans, %m mois, %d jours, %h heures et %i minutes</p>");
-                  echo '<br><a href="https://www.airpodsfc.fr/sign.php?id=sign.php?id=' . $test['user'] . '"><img src="sign.php?id=' . $test['user'] . '" height="50%" width="100%" style="border-radius: 7px; overflow:hidden;"></a>';
+                  echo '<br><a href="https://www.airpodsfc.fr/sign.php?id=sign.php?id=' . $test['user'] . '"><img src="https://www.airpodsfc.fr/sign.php?id=sign.php?id=' . $test['user'] . '" height="50%" width="100%" style="border-radius: 7px; overflow:hidden;"></a>';
                 }
                 else {
                   // echo '<br><h2>LICENCE NON TROUVÉE !</h2>';
                   echo '<br><p>Aucune licence n\'a été délivrée par l\'équipe de validation du AirPods FC à @' . ltrim($_GET['username'], '0') . '.</p>';
-                  echo '<br><a href="https://www.airpodsfc.fr/sign.php?id=' . $test['user'] . '"><img src="sign.php?id=' . $test['user'] . '" height="50%" width="100%" style="border-radius: 7px; overflow:hidden;"></a>';
+                  echo '<br><a href="https://www.airpodsfc.fr/sign.php?id=' . $test['user'] . '"><img src="https://www.airpodsfc.fr/sign.php?id=sign.php?id=' . $test['user'] . '" height="50%" width="100%" style="border-radius: 7px; overflow:hidden;"></a>';
                 }
                 }
               }
@@ -366,12 +366,12 @@ echo '<!DOCTYPE html>
                   echo '<br><p>Titulaire de la licence :</p> <h3>@' . $test['user'] . '</h3>';
                   echo '<br>IMMATRICULATION DE LA LICENCE : <h4>' . ltrim($test['number'], '0') . '</h4>';
                   echo '<br><p>Titulaire depuis ' . $compareddate->diff($now)->format("%y ans, %m mois, %d jours, %h heures et %i minutes</p>");
-                  echo '<br><a href="https://www.airpodsfc.fr/sign.php?id=' . $test['user'] . '"><img src="sign.php?id=' . $test['user'] . '" height="50%" width="100%" style="border-radius: 7px; overflow:hidden;"></a>';
+                  echo '<br><a href="https://www.airpodsfc.fr/sign.php?id=' . $test['user'] . '"><img src="https://www.airpodsfc.fr/sign.php?id=sign.php?id=' . $test['user'] . '" height="50%" width="100%" style="border-radius: 7px; overflow:hidden;"></a>';
                 }
                 else {
                   // echo '<br><h2>LICENCE NON TROUVÉE !</h2>';
                   echo '<br><p>Aucune licence n\'a été délivrée par l\'équipe de validation du AirPods FC à @' . ltrim($_GET['username'], '0') . '.</p>';
-                  echo '<br><a href="https://www.airpodsfc.fr/sign.php?id=sign.php?id=' . $test['user'] . '"><img src="sign.php?id=' . $test['user'] . '" height="50%" width="100%" style="border-radius: 7px; overflow:hidden;"></a>';
+                  echo '<br><a href="https://www.airpodsfc.fr/sign.php?id=sign.php?id=' . $test['user'] . '"><img src="https://www.airpodsfc.fr/sign.php?id=sign.php?id=' . $test['user'] . '" height="50%" width="100%" style="border-radius: 7px; overflow:hidden;"></a>';
                 }
               } else { echo 'error in licence transfer.';}}
 
