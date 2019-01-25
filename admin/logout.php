@@ -10,6 +10,7 @@ setcookie('id', '');
 setcookie('email', '');
 setcookie('pass_hache', '');
 
+header( "refresh:5;url=connexion.php" );
 echo 'Déconnexion effective! Au revoir et à bientôt.';
 
 ?>

@@ -91,10 +91,10 @@ echo '<!DOCTYPE html>
               <a href="pages/forms/rgpd.php" class="dropdown-item mt-2">
                 Espace RGPD
               </a>
-              <a class="dropdown-item">
+              <a href="pages/forms/pass.php" class="dropdown-item">
                 Changer le mot de passe
               </a>
-              <a class="dropdown-item">
+              <a href="logout.php" class="dropdown-item">
                 Déconnexion
               </a>
             </div>
