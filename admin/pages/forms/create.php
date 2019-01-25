@@ -139,7 +139,7 @@ echo '<!DOCTYPE html>
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="index.php">
+            <a class="nav-link" href="../../index.php">
               <i class="menu-icon mdi mdi-television"></i>
               <span class="menu-title">Tableau de bord</span>
             </a>
