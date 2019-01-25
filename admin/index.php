@@ -153,7 +153,7 @@ echo '<!DOCTYPE html>
 
 
           <li class="nav-item">
-            <a class="nav-link" href="pages/icons/font-awesome.html">
+            <a class="nav-link" href="pages/forms/check.php">
               <i class="menu-icon mdi mdi-sticker"></i>
               <span class="menu-title">Vérifier une licence</span>
             </a>
