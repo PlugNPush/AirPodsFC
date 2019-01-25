@@ -33,7 +33,7 @@ if (isset($_SESSION['id']) && $_SESSION['id'] != ''){
     echo '<center><h1><b><font size="7" face="verdana">Au revoir ', $test['nom'], '.</font></b></h1><br>Writing data to the database, this might take up to 15 seconds.</p><img src=https://storage.googleapis.com/gweb-uniblog-publish-prod/original_images/SID_FB_001.gif height="450" width="600"></center>';
   } else {
     header( "refresh:5;url=pages/forms/rgpd.php" );
-    echo '<center>Mot de passe incorrect. Veuillez réessayer...</center>'
+    echo '<center>Mot de passe incorrect. Veuillez réessayer...</center>';
   }
 
 } else {
