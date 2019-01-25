@@ -87,19 +87,8 @@ echo '<!DOCTYPE html>
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
               <a class="dropdown-item p-0">
-                <div class="d-flex border-bottom">
-                  <div class="py-3 px-4 d-flex align-items-center justify-content-center">
-                    <i class="mdi mdi-bookmark-plus-outline mr-0 text-gray"></i>
-                  </div>
-                  <div class="py-3 px-4 d-flex align-items-center justify-content-center border-left border-right">
-                    <i class="mdi mdi-account-outline mr-0 text-gray"></i>
-                  </div>
-                  <div class="py-3 px-4 d-flex align-items-center justify-content-center">
-                    <i class="mdi mdi-alarm-check mr-0 text-gray"></i>
-                  </div>
-                </div>
               </a>
-              <a class="dropdown-item mt-2">
+              <a href="pages/forms/rgpd.php" class="dropdown-item mt-2">
                 Espace RGPD
               </a>
               <a class="dropdown-item">
@@ -160,7 +149,7 @@ echo '<!DOCTYPE html>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="pages/tables/basic-table.html">
+            <a class="nav-link" href="pages/forms/rgpd.php">
               <i class="menu-icon mdi mdi-table"></i>
               <span class="menu-title">Espace RGPD</span>
             </a>
