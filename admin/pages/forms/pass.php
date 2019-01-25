@@ -256,7 +256,7 @@ echo '<!DOCTYPE html>
               if ($_POST['newpass'] == $_POST['pass']){
 
               } else {
-                echo 'Les mots de passes ne se correspondent pas.'
+                echo 'Les mots de passes ne se correspondent pas.';
               }
           } else {
             echo 'Mot de passe incorrect.';
