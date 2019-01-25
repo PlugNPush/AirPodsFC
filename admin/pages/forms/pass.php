@@ -247,81 +247,11 @@ echo '<!DOCTYPE html>
             </form>
           ';
 
-      if (isset($_POST['username2C']) && isset($_POST['date'])){
-        $req = $bdd->prepare('INSERT INTO licences(user, purchase, number, status) VALUES(:user, :purchase, :number, :status)');
-        if ($_POST['type'] == "basic" || $_POST['type'] == "banned"){
-          $number = rand(3000000, 9999999);
-        } else if ($_POST['type'] == "vip" || $_POST['type'] == "red"){
-          // 1st step is to check year gap
+      if (isset($_POST['oldpass']) && isset($_POST['newpass']) && isset($_POST['pass'])){
 
-          $reqtwo = $bdd->prepare('SELECT * FROM autoincrement;');
-          $reqtwo->execute();
-          $testtwo = $reqtwo->fetch();
-
-          $date = date('Y-m-d H:i:s');
-
-          $compareddate = new DateTime($testtwo["lastincrement"]);
-          $now = new DateTime();
-
-          $compare = $compareddate->format('Y');
-          $compare2 = $now->format('Y');
-
-          if ($compare != $compare2){
-            $reqthree = $bdd->prepare('UPDATE autoincrement SET vip = 0;');
-            $reqthree->execute();
-            $reqthree = $bdd->prepare('UPDATE autoincrement SET red = 0;');
-            $reqthree->execute();
-          }
-
-          if ($_POST['type'] == "vip"){
-            $reqfour = $bdd->prepare('UPDATE autoincrement SET vip = vip + 1;');
-            $reqfour->execute();
-            $countfour = $reqfour->rowCount();
-            $number = $compare2 . str_pad($testtwo['vip'] + 1, 3, '0', STR_PAD_LEFT);
-            $reqfive = $bdd->prepare('UPDATE autoincrement SET lastincrement = ?;');
-            $send = $now->format('Y-m-d H:i:s');
-            $reqfive->execute(array($date));
-
-          }
-
-          if ($_POST['type'] == "red"){
-            $reqfour = $bdd->prepare('UPDATE autoincrement SET red = red + 1;');
-            $reqfour->execute();
-            $countfour = $reqfour->rowCount();
-            $number = $compare2 . "PR" . str_pad($testtwo['red'] + 1, 3, '0', STR_PAD_LEFT);
-            $reqfive = $bdd->prepare('UPDATE autoincrement SET lastincrement = ?;');
-            $send = $now->format('Y-m-d H:i:s');
-            $reqfive->execute(array($date));
-
-          }
-
-
-
-        }
-
-            $req->execute(array(
-            'user' => $_POST['username2C'],
-            'purchase' => $date,
-            'number' => $number,
-            'status' => $_POST['type']
-            ));
-
-            $count = $req->rowCount();
-
-            if ($count == 0){
-              if ($_POST['type'] == "red" && $countfour > 0){
-                $reqsix = $bdd->prepare('UPDATE autoincrement SET red = red - 1;');
-                $reqsix->execute();
-              }
-              if ($_POST['type'] == "vip" && $countfour > 0){
-                $reqsix = $bdd->prepare('UPDATE autoincrement SET red = red - 1;');
-                $reqsix->execute();
-              }
-            }
-
-            echo '<h2 class="card-title"><br><br>La licence a bien été signée pour @' . $_POST['username2C'] . '!</h2><br><h3 class="card-description">LICENCE NUMÉRO ' . $number . '<br><a href="/../AirPodsFC/sign.php?id=' . $_POST['username2C'] . '"><img src="/../AirPodsFC/sign.php?id=' . $_POST['username2C'] . '" height="20%" width="30%" style="border-radius: 7px; overflow:hidden;"></a>';
-          }
-
+      } else {
+        echo 'Erreur lors du transfert des données.';
+      }
 
       echo '</div>
     </div>
