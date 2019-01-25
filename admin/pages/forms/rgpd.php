@@ -312,7 +312,7 @@ echo '<!DOCTYPE html>
           <div class="form-group row">
             <label for="exampleInputEmail2" class="col-sm-3 col-form-label">Saisissez votre mot de passe.</label>
             <div class="col-sm-9">
-              <input type="password" class="form-control" id="passwd" name="passwd" placeholder="Mot de passe du compte...">
+              <input type="password" class="form-control" id="mdp" name="mdp" placeholder="Mot de passe du compte...">
             </div>
           </div>
 
