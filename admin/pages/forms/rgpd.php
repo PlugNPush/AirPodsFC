@@ -262,7 +262,7 @@ echo '<!DOCTYPE html>
               if (isset($test['id'])){
               $req2 = $bdd->prepare('DELETE * FROM licences WHERE id = ?;');
               $req2->execute(array($test['id']));
-              echo '<br><h3>L\'utilisateur a bien été supprimé de la base de donnée. Veuillez l\'en informer dès maintenant.</h3>';
+              echo '<br><h3>L\'utilisateur' . $_POST['username'] . 'a bien été supprimé de la base de donnée. Veuillez l\'en informer dès maintenant.</h3>';
             }
             else {
               // echo '<br><h2>LICENCE NON TROUVÉE !</h2>';
@@ -285,7 +285,7 @@ echo '<!DOCTYPE html>
               if (isset($test['id'])){
                 $req2 = $bdd->prepare('DELETE * FROM licences WHERE id = ?;');
                 $req2->execute(array($test['id']));
-                echo '<br><h3>L\'utilisateur a bien été supprimé de la base de donnée. Veuillez l\'en informer dès maintenant.</h3>';
+                echo '<br><h3>L\'utilisateur N° ' . $_POST['number'] . ' a bien été supprimé de la base de donnée. Veuillez l\'en informer dès maintenant.</h3>';
             }
             else {
               // echo '<br><h2>LICENCE NON TROUVÉE !</h2>';
