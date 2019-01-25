@@ -299,6 +299,27 @@ echo '<!DOCTYPE html>
     </div>
   </div>
   </div>
+
+  <div class="main-panel">
+  <div class="col-12 stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Supprimer votre compte</h4>
+        <p class="card-description">
+          Vous ne pourrez plus vous connecter au panel d\'administration du AirPods FC. Ceci n\'a aucune incidence sur votre licence, si vous voulez supprimer votre licence, utilisez le formulaire au-dessus.
+        </p>
+        <form class="forms-sample" action="../../unreg.php" method="post">
+          <div class="form-group row">
+            <label for="exampleInputEmail2" class="col-sm-3 col-form-label">Saisissez votre mot de passe.</label>
+            <div class="col-sm-9">
+              <input type="password" class="form-control" id="passwd" name="passwd" placeholder="Mot de passe du compte...">
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-success mr-2">Supprimer définitivement et de manière irréversible votre compte conformément au RGPD</button>
+        </form>';
+
+        echo'
     <!-- content-wrapper ends -->
         <!-- partial:partials/_footer.html -->
         <footer class="footer">
