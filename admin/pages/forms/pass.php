@@ -253,9 +253,13 @@ echo '<!DOCTYPE html>
           $verify = password_verify($_POST['oldpass'], $test['password']);
           if ($verify)
           {
+              if ($_POST['newpass'] == $_POST['pass']){
 
+              } else {
+                echo 'Les mots de passes ne se correspondent pas.'
+              }
           } else {
-            echo 'Mot de passe incorrect';
+            echo 'Mot de passe incorrect.';
           }
       } else {
         echo 'Erreur lors du transfert des données.';
