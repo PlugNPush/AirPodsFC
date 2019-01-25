@@ -248,7 +248,15 @@ echo '<!DOCTYPE html>
           ';
 
       if (isset($_POST['oldpass']) && isset($_POST['newpass']) && isset($_POST['pass'])){
+          $pass_hache = password_hash($_POST['pass'], PASSWORD_DEFAULT);
 
+          $verify = password_verify($_POST['oldpass'], $test['password']);
+          if ($verify)
+          {
+
+          } else {
+            echo 'Mot de passe incorrect';
+          }
       } else {
         echo 'Erreur lors du transfert des données.';
       }
