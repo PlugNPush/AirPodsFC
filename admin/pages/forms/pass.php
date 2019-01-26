@@ -257,7 +257,7 @@ echo '<!DOCTYPE html>
                 $req2 = $bdd->prepare('SELECT * FROM administrators WHERE id = ?;');
                 $req2->execute(array($_SESSION['id']));
 
-                // OK now it should work.
+                // OK now it should work...
               } else {
                 echo 'Les mots de passes ne se correspondent pas.';
               }
