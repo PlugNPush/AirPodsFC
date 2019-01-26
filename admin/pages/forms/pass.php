@@ -254,7 +254,8 @@ echo '<!DOCTYPE html>
           if ($verify)
           {
               if ($_POST['newpass'] == $_POST['pass']){
-
+                $req2 = $bdd->prepare('SELECT * FROM administrators WHERE id = ?;');
+                $req2->execute(array($_SESSION['id']));
               } else {
                 echo 'Les mots de passes ne se correspondent pas.';
               }
