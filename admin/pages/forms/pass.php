@@ -256,7 +256,7 @@ echo '<!DOCTYPE html>
               if ($_POST['newpass'] == $_POST['pass']){
                 $req2 = $bdd->prepare('UPDATE administrators SET password = ? WHERE id = ?;');
                 $req2->execute(array($pass_hache, $_SESSION['id']));
-
+                echo 'Le mot de passe a été changé avec succès !';
 
               } else {
                 echo 'Les mots de passes ne se correspondent pas.';
