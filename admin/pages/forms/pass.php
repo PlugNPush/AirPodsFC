@@ -265,7 +265,7 @@ echo '<!DOCTYPE html>
             echo 'Mot de passe incorrect.';
           }
       } else {
-        echo 'Erreur lors du transfert des données.';
+        //echo 'Erreur lors du transfert des données.';
       }
 
       echo '</div>
