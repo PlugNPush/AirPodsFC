@@ -22,6 +22,7 @@ if(isset($_POST['licence'])){
 
   $compareddate = new DateTime($test["purchase"]);
   $now = new DateTime();
+  
 if (isset($test["id"])){
   echo '<h1><center>LICENCE AUTHENTIQUE AIRPODS FC</center></h1>';
   echo '<p>Titulaire de la licence : @' . $test['user'];
