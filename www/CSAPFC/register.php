@@ -63,7 +63,7 @@ if ((!isset($_GET['service']) || $_GET['service'] == "") || ((!isset($_GET['user
   					<span class="focus-input100"></span>
   				</div>
           <div class="wrap-input100 input100-select">
-  					<span class="label-input100">Rechercher avec</span>
+  					<span class="label-input100">Preuve d\'achat</span>
   					<div>
             <!-- We\'ll transform this input into a pond -->
 <input type="file" class="filepond">
