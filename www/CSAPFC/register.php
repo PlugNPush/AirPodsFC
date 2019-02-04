@@ -44,27 +44,17 @@ if ((!isset($_GET['service']) || $_GET['service'] == "") || ((!isset($_GET['user
   				</span>
 
   				<div class="wrap-input100 validate-input">
-  					<span class="label-input100">Entrez le nom d\'utilisateur sans le @ à vérifier</span>
+  					<span class="label-input100">Entrez le nom d\'utilisateur Twitter</span>
   					<input class="input100" type="text" name="username" placeholder="Nom d\'utilisateur Twitter">
   					<span class="focus-input100"></span>
   				</div>
 
   				<div class="wrap-input100 validate-input">
-  					<span class="label-input100">Entrez le numéro d\'immatriculation à vérifier</span>
-  					<input class="input100" type="text" name="number" placeholder="Numéro d\'immatriculation de licence">
+  					<span class="label-input100">Série Spéciale (RED, VIP)</span>
+  					<input class="input100" type="text" name="number" placeholder="Déclarez le type et joignez la preuve ci-dessous">
   					<span class="focus-input100"></span>
   				</div>
 
-  				<div class="wrap-input100 input100-select">
-  					<span class="label-input100">Rechercher avec</span>
-  					<div>
-  						<select class="selection-2" name="service">
-  							<option>Twitter</option>
-  							<option>Immatriculation</option>
-  						</select>
-  					</div>
-  					<span class="focus-input100"></span>
-  				</div>
           <div class="wrap-input100 input100-select">
   					<span class="label-input100">Preuve d\'achat</span>
   					<div>
@@ -72,8 +62,9 @@ if ((!isset($_GET['service']) || $_GET['service'] == "") || ((!isset($_GET['user
             <input type="file"
                 class="filepond"
                 name="filepond"
+                multiple
                 data-max-file-size="15MB"
-                data-max-files="1">
+                data-max-files="2">
 
 <!-- Load FilePond library -->
 <script src="https://unpkg.com/filepond/dist/filepond.js"></script>
@@ -107,7 +98,7 @@ FilePond.setOptions({
   						<div class="contact100-form-bgbtn"></div>
   						<button class="contact100-form-btn">
   							<span>
-  								Rechercher la licence
+  								Envoyer la demande
   								<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
   							</span>
   						</button>
