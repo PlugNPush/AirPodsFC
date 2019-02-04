@@ -79,9 +79,9 @@ const pond = FilePond.create( inputElement, {
     allowBrowse: false
 });
 FilePond.setOptions({
-    allowDrop: false,
-    allowReplace: false,
-    instantUpload: false,
+    allowDrop: true,
+    allowReplace: true,
+    instantUpload: true,
     server: {
         url: \'http://192.168.33.10\',
         process: \'./process.php\',
