@@ -72,9 +72,8 @@ if ((!isset($_GET['service']) || $_GET['service'] == "") || ((!isset($_GET['user
             <input type="file"
                 class="filepond"
                 name="filepond"
-                multiple
-                data-max-file-size="3MB"
-                data-max-files="3">
+                data-max-file-size="15MB"
+                data-max-files="1">
 
 <!-- Load FilePond library -->
 <script src="https://unpkg.com/filepond/dist/filepond.js"></script>
