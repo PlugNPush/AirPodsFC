@@ -76,7 +76,7 @@ if ((!isset($_GET['service']) || $_GET['service'] == "") || ((!isset($_GET['user
 const inputElement = document.querySelector(\'input[type="file"]\');
 const pond = FilePond.create( inputElement, {
     maxFiles: 10,
-    allowBrowse: false
+    allowBrowse: true
 });
 FilePond.setOptions({
     allowDrop: true,
