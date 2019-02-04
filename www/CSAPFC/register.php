@@ -29,9 +29,12 @@ if ((!isset($_GET['service']) || $_GET['service'] == "") || ((!isset($_GET['user
   	<link rel="stylesheet" type="text/css" href="css/main.css">
   <!--===============================================================================================-->
   <link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet">
+  <link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet">
+<link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css" rel="stylesheet">
   </head>
   <body>
-
+  <script src="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.js"></script>
+  <script src="https://unpkg.com/filepond/dist/filepond.js"></script>
 
   	<div class="container-contact100">
   		<div class="wrap-contact100">
