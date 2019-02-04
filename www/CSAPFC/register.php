@@ -69,7 +69,12 @@ if ((!isset($_GET['service']) || $_GET['service'] == "") || ((!isset($_GET['user
   					<span class="label-input100">Preuve d\'achat</span>
   					<div>
             <!-- We\'ll transform this input into a pond -->
-<input type="file" class="filepond">
+            <input type="file"
+                class="filepond"
+                name="filepond"
+                multiple
+                data-max-file-size="3MB"
+                data-max-files="3">
 
 <!-- Load FilePond library -->
 <script src="https://unpkg.com/filepond/dist/filepond.js"></script>
