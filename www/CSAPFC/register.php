@@ -50,8 +50,8 @@ if ((!isset($_GET['service']) || $_GET['service'] == "") || ((!isset($_GET['user
   				</div>
 
   				<div class="wrap-input100 validate-input">
-  					<span class="label-input100">Série Spéciale (RED, VIP)</span>
-  					<input class="input100" type="text" name="number" placeholder="Déclarez le type et joignez la preuve ci-dessous">
+  					<span class="label-input100">Déclarez le type et joignez la preuve ci-dessous</span>
+  					<input class="input100" type="text" name="number" placeholder="Série Spéciale (RED, VIP ou vide)">
   					<span class="focus-input100"></span>
   				</div>
 
