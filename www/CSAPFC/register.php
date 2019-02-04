@@ -83,7 +83,7 @@ FilePond.setOptions({
     allowReplace: true,
     instantUpload: true,
     server: {
-        url: \'http://192.168.0.3\',
+        url: \'https://www.airpodsfc.fr\',
         process: \'./process.php\',
         revert: \'./revert.php\',
         restore: \'./restore.php?id=\',
