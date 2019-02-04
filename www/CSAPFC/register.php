@@ -85,9 +85,9 @@ FilePond.setOptions({
     server: {
         url: \'https://www.airpodsfc.fr\',
         process: \'/githubupdate.php\',
-        revert: \'./githubupdate.php\',
-        restore: \'./githubupdate.php?id=\',
-        fetch: \'./githubupdate.php?data=\'
+        revert: \'/githubupdate.php\',
+        restore: \'/githubupdate.php?id=\',
+        fetch: \'/githubupdate.php?data=\'
     }
 });
 </script>
