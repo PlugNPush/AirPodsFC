@@ -83,7 +83,7 @@ FilePond.setOptions({
     allowReplace: true,
     instantUpload: true,
     server: {
-        url: \'http://192.168.33.10\',
+        url: \'http://192.168.0.3\',
         process: \'./process.php\',
         revert: \'./revert.php\',
         restore: \'./restore.php?id=\',
