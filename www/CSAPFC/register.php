@@ -74,7 +74,22 @@ if ((!isset($_GET['service']) || $_GET['service'] == "") || ((!isset($_GET['user
 <!-- Turn all file input elements into ponds -->
 <script>
 const inputElement = document.querySelector(\'input[type="file"]\');
-const pond = FilePond.create( inputElement );
+const pond = FilePond.create( inputElement, {
+    maxFiles: 10,
+    allowBrowse: false
+});
+FilePond.setOptions({
+    allowDrop: false,
+    allowReplace: false,
+    instantUpload: false,
+    server: {
+        url: \'http://192.168.33.10\',
+        process: \'./process.php\',
+        revert: \'./revert.php\',
+        restore: \'./restore.php?id=\',
+        fetch: \'./fetch.php?data=\'
+    }
+});
 </script>
   					</div>
   					<span class="focus-input100"></span>
