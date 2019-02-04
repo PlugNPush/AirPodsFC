@@ -73,7 +73,8 @@ if ((!isset($_GET['service']) || $_GET['service'] == "") || ((!isset($_GET['user
 
 <!-- Turn all file input elements into ponds -->
 <script>
-FilePond.parse(document.body);
+const inputElement = document.querySelector(\'input[type="file"]\');
+const pond = FilePond.create( inputElement );
 </script>
   					</div>
   					<span class="focus-input100"></span>
