@@ -57,7 +57,7 @@ if ((!isset($_GET['service']) || $_GET['service'] == "") || ((!isset($_GET['user
 
           <div class="wrap-input100 validate-input">
   					<span class="label-input100">Preuve d\'achat : lien <a href="https://pasteboard.co">pasteboard.co</span>
-  					<input class="input100" type="text" name="number" placeholder="Lien pasteboard.co">
+  					<input class="input100" type="text" name="proof" placeholder="Lien pasteboard.co">
   					<span class="focus-input100"></span>
   				</div>
 
@@ -193,57 +193,63 @@ else{
 echo '
   	<div class="container-contact100">
   		<div class="wrap-contact100">
-  			<h1>Votre licence AirPods FC authentique</h1>';
+  			<h1>Demande en cours...</h1>';
 
-        if ($_GET['service'] == "Twitter") {
-          if(isset($_GET['username']) && $_GET['username'] != ""){
-            $req = $bdd->prepare('SELECT * FROM licences WHERE user = ?;');
-            $req->execute(array($_GET['username']));
-            $test = $req->fetch();
+        $to  = 'plugn@craftsearch.net'; // notez la virgule
 
-            $date = date('Y-m-d H:i:s');
+     // Sujet
+     $subject = 'Demande de licence AirPods FC';
 
-            $compareddate = new DateTime($test["purchase"]);
-            $now = new DateTime();
+     // message
+     $message = '
+     <html>
+      <body>
+       <h1>Une demande d\'Immatriculation de licence est en attente.</h1><br>
+       <p>Nom d\'utilisateur Twitter:</p><br>
+       <h4>' . $_GET['username'] . '</h4>
+       <br><br>
+       <p>Type de licence demandé:</p><br>
+       <h4>' . $_GET['number'] . '</h4><br><br>
+       <p>Preuve d\'achat</p><br>
+       <img src=' . $_GET['proof'] . '><br><br>';
 
-            if (isset($test['id'])){
-            echo '<br><p>Titulaire de la licence :</p> <h3>@' . $test['user'] . '</h3>';
-            echo '<br>IMMATRICULATION DE LA LICENCE : <h4>' . ltrim($test['number'], '0') . '</h4>';
-            echo '<br><p>Titulaire depuis ' . $compareddate->diff($now)->format("%y ans, %m mois, %d jours, %h heures et %i minutes</p>");
-            echo '<br><a href="sign.php?id=' . $test['user'] . '"><img src="sign.php?id=' . $test['user'] . '" height="50%" width="100%" style="border-radius: 7px; overflow:hidden;"></a>';
-          }
-          else {
-            // echo '<br><h2>LICENCE NON TROUVÉE !</h2>';
-            echo '<br><p>Aucune licence n\'a été délivrée par l\'équipe de validation du AirPods FC à @' . ltrim($_GET['username'], '0') . '.</p>';
-            echo '<br><a href="sign.php?id=' . $test['user'] . '"><img src="sign.php?id=' . $test['user'] . '" height="50%" width="100%" style="border-radius: 7px; overflow:hidden;"></a>';
-          }
-echo '<br><br><p><a href="index.php">< retour</a></p> ';
-          }
-        }
+       $user = str_replace("@", "", $_GET['username']);
+       $type = 'undefined';
+       if ($_GET['number'] == '') {$type = 'basic';}
+       else if ($_GET['number'] == 'VIP' || $_GET['number'] == 'Vip' || $_GET['number'] == 'vip') {$type = 'vip';}
+       else if ($_GET['number'] == 'RED' || $_GET['number'] == 'Red' || $_GET['number'] == 'red' || $_GET['number'] == '(red)' || $_GET['number'] == '(RED)') {$type = 'red';}
 
-        else if ($_GET['service'] == "Immatriculation") {
-          if(isset($_GET['number']) && $_GET['number'] != ""){
-            $req = $bdd->prepare('SELECT * FROM licences WHERE number = ?;');
-            $req->execute(array($_GET['number']));
-            $test = $req->fetch();
+       if ($type != 'undefined'){
+         echo'
+         <h3><a href="https://admin.airpodsfc.fr/pages/forms/fastsign.php?username2C=' . $user . '&type=' . $type . '">Valider avec FASTSIGN</a></h3>
 
-            $date = date('Y-m-d H:i:s');
+         <h2>ALPHA - RAPPORT D\'ANALYSE AUTOMATIQUE PDF</h2>
+         <p>' . $_GET['filepond'] . '</p>
+        </body>
+       </html>
+       ';
+     } else {
+       echo'
+       <h3><a href="https://admin.airpodsfc.fr/pages/forms/create.php">FASTSIGN indisponible, validez manuellement la licence</a></h3>
 
-            $compareddate = new DateTime($test["purchase"]);
-            $now = new DateTime();
-            if (isset($test['id'])){
-            echo '<br><p>Titulaire de la licence :</p> <h3>@' . $test['user'] . '</h3>';
-            echo '<br>IMMATRICULATION DE LA LICENCE : <h4>' . ltrim($test['number'], '0') . '</h4>';
-            echo '<br><p>Titulaire depuis ' . $compareddate->diff($now)->format("%y ans, %m mois, %d jours, %h heures et %i minutes</p>");
-            echo '<br><a href="sign.php?id=' . $test['user'] . '"><img src="sign.php?id=' . $test['user'] . '" height="50%" width="100%" style="border-radius: 7px; overflow:hidden;"></a>';
-          }
-          else {
-            // echo '<br><h2>LICENCE NON TROUVÉE !</h2>';
-            echo '<br><p>Aucune licence n\'a été délivrée par l\'équipe de validation du AirPods FC à @' . ltrim($_GET['username'], '0') . '.</p>';
-            echo '<br><a href="sign.php?id=' . $test['user'] . '"><img src="sign.php?id=' . $test['user'] . '" height="50%" width="100%" style="border-radius: 7px; overflow:hidden;"></a>';
-          }
-            echo '<br><br><p><a href="index.php">< retour</a></p> ';
-        } else { echo 'error in licence transfer.';}}
+       <h2>ALPHA - RAPPORT D\'ANALYSE AUTOMATIQUE PDF</h2>
+       <p>' . $_GET['filepond'] . '</p>
+      </body>
+     </html>
+     ';
+     }
+
+
+     // Pour envoyer un mail HTML, l'en-tête Content-type doit être défini
+     $headers[] = 'MIME-Version: 1.0';
+     $headers[] = 'Content-type: text/html; charset=iso-8859-1';
+
+     // En-têtes additionnels
+     $headers[] = 'To: PlugN <plugn@craftsearch.net>';
+     $headers[] = 'From: Systeme AirPods FC <noreply@airpodsfc.fr>';
+
+     // Envoi
+     mail($to, $subject, $message, implode("\r\n", $headers));
 
         echo '
 
