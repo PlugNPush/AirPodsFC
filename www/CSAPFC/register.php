@@ -221,14 +221,14 @@ echo '
           <body>
            <h1>Une demande d\'Immatriculation de licence est en attente.</h1>
            <p>Nom d\'utilisateur Twitter:</p>
-           <h4>' . $_GET['username'] . '</h4>
+           <h4>@' . $user . '</h4>
            <br>
            <p>Type de licence demandee:</p>
-           <h4>' . $_GET['number'] . '</h4>
+           <h4>' . $type . '</h4>
            <p>Preuve d\'achat</p><br>
            <img src=' . $_GET['proof'] . ' style="width: 50%; height: 50%"\><br><p>' . $_GET['proof'] . '</p>
          <h3><a href="https://admin.airpodsfc.fr/pages/forms/fastsign.php?username2C=' . $user . '&type=' . $type . '">Valider avec FASTSIGN</a></h3>
-         <h3><a href="https://admin.airpodsfc.fr/pages/forms/create.php">Si une erreur est présente, validez manuellement la licence ici</a></h3>
+         <h3><a href="https://admin.airpodsfc.fr/pages/forms/create.php">Si une erreur est presente, validez manuellement la licence ici</a></h3>
          <h4>ALPHA - RAPPORT D\'ANALYSE AUTOMATIQUE PDF</h4>
          <p>' . $_GET['filepond'] . '</p>
         </body>
