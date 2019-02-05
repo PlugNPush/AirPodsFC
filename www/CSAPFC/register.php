@@ -1,7 +1,7 @@
 <?php
 
 
-if ((!isset($_GET['service']) || $_GET['service'] == "") || ((!isset($_GET['username']) || $_GET['username'] == "") && $_GET['service'] == "Twitter") || ((!isset($_GET['number']) || $_GET['number'] == "") && $_GET['service'] == "Immatriculation")){
+if ((!isset($_GET['username']) || $_GET['username'] == "") && (!isset($_GET['proof']) || $_GET['proof'] == "")){
   echo '<!DOCTYPE html>
   <html lang="en">
   <head>
