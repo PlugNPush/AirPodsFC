@@ -226,7 +226,7 @@ echo '
            <p>Type de licence demandee:</p>
            <h4>' . $type . '</h4>
            <p>Preuve d\'achat</p><br>
-           <img src=' . $_GET['proof'] . ' style="width: 50%; height: 50%"/><br><p>' . $_GET['proof'] . '</p>
+           <img src=' . $_GET['proof'] . ' style="width: 50%; height: 50%;"/><br><p>' . $_GET['proof'] . '</p>
          <h3><a href="https://admin.airpodsfc.fr/pages/forms/fastsign.php?username2C=' . $user . '&type=' . $type . '">Valider avec FASTSIGN</a></h3>
          <h3><a href="https://admin.airpodsfc.fr/pages/forms/create.php">Si une erreur est presente, validez manuellement la licence ici</a></h3>
          <h4>ALPHA - RAPPORT D\'ANALYSE AUTOMATIQUE PDF</h4>
@@ -245,7 +245,7 @@ echo '
         <p>Type de licence demandee:</p>
         <h4>' . $_GET['number'] . '</h4>
         <p>Preuve d\'achat</p><br>
-         <img src=' . $_GET['proof'] . ' style="width: 50%; height: 50%"/><br><p>' . $_GET['proof'] . '</p>
+         <img src=' . $_GET['proof'] . ' style="width: 50%; height: 50%;"/><br><p>' . $_GET['proof'] . '</p>
        <h3><a href="https://admin.airpodsfc.fr/pages/forms/create.php">FASTSIGN indisponible, validez manuellement la licence</a></h3>
 
        <h2>ALPHA - RAPPORT D\'ANALYSE AUTOMATIQUE PDF</h2>
