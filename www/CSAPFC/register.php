@@ -55,8 +55,14 @@ if ((!isset($_GET['service']) || $_GET['service'] == "") || ((!isset($_GET['user
   					<span class="focus-input100"></span>
   				</div>
 
+          <div class="wrap-input100 validate-input">
+  					<span class="label-input100">Preuve d\'achat : lien <a href="https://pasteboard.co">pasteboard.co</span>
+  					<input class="input100" type="text" name="number" placeholder="Lien pasteboard.co">
+  					<span class="focus-input100"></span>
+  				</div>
+
           <div class="wrap-input100 input100-select">
-  					<span class="label-input100">Preuve d\'achat</span>
+  					<span class="label-input100">Preuve d\'achat PDF (inactif)</span>
   					<div>
             <!-- We\'ll transform this input into a pond -->
             <input type="file"
