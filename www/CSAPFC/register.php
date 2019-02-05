@@ -200,31 +200,33 @@ echo '
      // Sujet
      $subject = 'Demande de licence AirPods FC';
 
-     // message
-     $message = '
-     <html>
-      <body>
-       <h1>Une demande d\'Immatriculation de licence est en attente.</h1><br>
-       <p>Nom d\'utilisateur Twitter:</p><br>
-       <h4>' . $_GET['username'] . '</h4>
-       <br><br>
-       <p>Type de licence demandé:</p><br>
-       <h4>' . $_GET['number'] . '</h4><br><br>
-       <p>Preuve d\'achat</p><br>
-       <img src=' . $_GET['proof'] . '><br><br>';
+     $user = str_replace("@", "", $_GET['username']);
+     $type = 'undefined';
+     if ($_GET['number'] == '') {$type = 'basic';}
+     else if (strcasecmp($_GET['number'], 'vip') == 0) {
+       $type = 'vip';
+     }
+     else if (strcasecmp($_GET['number'], 'red') == 0){
+       $type = 'red';
+     }
 
-       $user = str_replace("@", "", $_GET['username']);
-       $type = 'undefined';
-       if ($_GET['number'] == '') {$type = 'basic';}
-       else if (strcasecmp($_GET['number'], 'vip') == 0) {
-         $type = 'vip';
-       }
-       else if (strcasecmp($_GET['number'], 'red') == 0){
-         $type = 'red';
-       }
+     // message
+
+
+
 
        if ($type != 'undefined'){
-         echo'
+         $message = '
+         <html>
+          <body>
+           <h1>Une demande d\'Immatriculation de licence est en attente.</h1><br>
+           <p>Nom d\'utilisateur Twitter:</p><br>
+           <h4>' . $_GET['username'] . '</h4>
+           <br><br>
+           <p>Type de licence demandé:</p><br>
+           <h4>' . $_GET['number'] . '</h4><br><br>
+           <p>Preuve d\'achat</p><br>
+           <img src=' . $_GET['proof'] . '><br><p>' . $_GET['proof'] . '</p><br><br>
          <h3><a href="https://admin.airpodsfc.fr/pages/forms/fastsign.php?username2C=' . $user . '&type=' . $type . '">Valider avec FASTSIGN</a></h3>
 
          <h2>ALPHA - RAPPORT D\'ANALYSE AUTOMATIQUE PDF</h2>
@@ -233,7 +235,17 @@ echo '
        </html>
        ';
      } else {
-       echo'
+       $message = '
+       <html>
+        <body>
+         <h1>Une demande d\'Immatriculation de licence est en attente.</h1><br>
+         <p>Nom d\'utilisateur Twitter:</p><br>
+         <h4>' . $_GET['username'] . '</h4>
+         <br><br>
+         <p>Type de licence demandé:</p><br>
+         <h4>' . $_GET['number'] . '</h4><br><br>
+         <p>Preuve d\'achat</p><br>
+         <img src=' . $_GET['proof'] . '><br><br>
        <h3><a href="https://admin.airpodsfc.fr/pages/forms/create.php">FASTSIGN indisponible, validez manuellement la licence</a></h3>
 
        <h2>ALPHA - RAPPORT D\'ANALYSE AUTOMATIQUE PDF</h2>
