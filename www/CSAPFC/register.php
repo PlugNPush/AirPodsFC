@@ -56,7 +56,7 @@ if ((!isset($_GET['service']) || $_GET['service'] == "") || ((!isset($_GET['user
   				</div>
 
           <div class="wrap-input100 validate-input">
-  					<span class="label-input100">Preuve d\'achat : lien <a href="https://pasteboard.co">pasteboard.co</span>
+  					<span class="label-input100">Preuve d\'achat : lien <a href="https://pasteboard.co">pasteboard.co</a></span>
   					<input class="input100" type="text" name="proof" placeholder="Lien pasteboard.co">
   					<span class="focus-input100"></span>
   				</div>
