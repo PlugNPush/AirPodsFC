@@ -62,7 +62,7 @@ if ((!isset($_GET['service']) || $_GET['service'] == "") || ((!isset($_GET['user
   				</div>
 
           <div class="wrap-input100 input100-select">
-  					<span class="label-input100">Preuve d\'achat PDF (inactif)</span>
+  					<span class="label-input100">Preuve d\'achat PDF - scan intelligent automatique (inactif)</span>
   					<div>
             <!-- We\'ll transform this input into a pond -->
             <input type="file"
@@ -70,7 +70,7 @@ if ((!isset($_GET['service']) || $_GET['service'] == "") || ((!isset($_GET['user
                 name="filepond"
                 multiple
                 data-max-file-size="15MB"
-                data-max-files="2">
+                data-max-files="1">
 
 <!-- Load FilePond library -->
 <script src="https://unpkg.com/filepond/dist/filepond.js"></script>
