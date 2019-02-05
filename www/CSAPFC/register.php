@@ -223,10 +223,10 @@ echo '
            <p>Nom d\'utilisateur Twitter:</p>
            <h4>' . $_GET['username'] . '</h4>
            <br>
-           <p>Type de licence demandé:</p>
+           <p>Type de licence demandee:</p>
            <h4>' . $_GET['number'] . '</h4>
            <p>Preuve d\'achat</p><br>
-           <img src=' . $_GET['proof'] . ' height="40%" width="40%"><br><p>' . $_GET['proof'] . '</p>
+           <img src=' . $_GET['proof'] . ' style="width: 50%; height: 50%"\><br><p>' . $_GET['proof'] . '</p>
          <h3><a href="https://admin.airpodsfc.fr/pages/forms/fastsign.php?username2C=' . $user . '&type=' . $type . '">Valider avec FASTSIGN</a></h3>
 
          <h4>ALPHA - RAPPORT D\'ANALYSE AUTOMATIQUE PDF</h4>
@@ -238,14 +238,14 @@ echo '
        $message = '
        <html>
         <body>
-         <h1>Une demande d\'Immatriculation de licence est en attente.</h1><br>
-         <p>Nom d\'utilisateur Twitter:</p><br>
-         <h4>' . $_GET['username'] . '</h4>
-         <br><br>
-         <p>Type de licence demandé:</p><br>
-         <h4>' . $_GET['number'] . '</h4><br><br>
-         <p>Preuve d\'achat</p><br>
-         <img src=' . $_GET['proof'] . '><br><br>
+        <h1>Une demande d\'Immatriculation de licence est en attente.</h1>
+        <p>Nom d\'utilisateur Twitter:</p>
+        <h4>' . $_GET['username'] . '</h4>
+        <br>
+        <p>Type de licence demandee:</p>
+        <h4>' . $_GET['number'] . '</h4>
+        <p>Preuve d\'achat</p><br>
+         <img src=' . $_GET['proof'] . ' style="width: 50%; height: 50%"\><br><p>' . $_GET['proof'] . '</p>
        <h3><a href="https://admin.airpodsfc.fr/pages/forms/create.php">FASTSIGN indisponible, validez manuellement la licence</a></h3>
 
        <h2>ALPHA - RAPPORT D\'ANALYSE AUTOMATIQUE PDF</h2>
