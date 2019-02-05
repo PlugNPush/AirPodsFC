@@ -216,8 +216,12 @@ echo '
        $user = str_replace("@", "", $_GET['username']);
        $type = 'undefined';
        if ($_GET['number'] == '') {$type = 'basic';}
-       else if ($_GET['number'] == 'VIP' || $_GET['number'] == 'Vip' || $_GET['number'] == 'vip') {$type = 'vip';}
-       else if ($_GET['number'] == 'RED' || $_GET['number'] == 'Red' || $_GET['number'] == 'red' || $_GET['number'] == '(red)' || $_GET['number'] == '(RED)') {$type = 'red';}
+       else if ($_GET['number'] == 'VIP' || $_GET['number'] == 'Vip' || $_GET['number'] == 'vip') {
+         $type = 'vip';
+       }
+       else if ($_GET['number'] == 'RED' || $_GET['number'] == 'Red' || $_GET['number'] == 'red' || $_GET['number'] == '(red)' || $_GET['number'] == '(RED)'){
+         $type = 'red';
+       }
 
        if ($type != 'undefined'){
          echo'
