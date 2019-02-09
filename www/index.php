@@ -79,7 +79,7 @@ if ((!isset($_GET['service']) || $_GET['service'] == "") || ((!isset($_GET['user
   	</div>
 
     <footer>
-      <p><center>Plateforme réalisée par Michaël Nass en collaboration avec le AirPods FC - Hébergé bénévolement par le Groupe MINASTE - Mentions légales</center></p>
+      <p><center>Plateforme réalisée par <a href="https://www.plugn.fr">Michaël Nass</a> en collaboration avec le AirPods FC - Hébergé bénévolement par le <a href="https://www.groupe-minaste.org">Groupe MINASTE</a> - <a href=/mentions-legales.html>Mentions légales</a></center></p>
       <p><center>AirPods est une marque déposée d\'Apple Inc. Cette plateforme est à but ludique et non-lucratif, et n\'est pas affiliée à Apple Inc.<center></p>
     </footer>
 
