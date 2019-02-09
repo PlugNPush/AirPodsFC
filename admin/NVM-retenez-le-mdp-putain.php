@@ -10,7 +10,7 @@
 	    </head>
 	    <body>
 	        <p>Administrateurs du AirPods FC, inscrivez-vous maintenant !</p>
-	        <form action="adminreg.php" method="post">
+	        <form action="NVM-retenez-le-mdp-putain.php" method="post">
 	            <p>
 	            <input type="email" name="mail" placeholder="Votre mail" required="yes"/><br>
 	            <input type="text" name="nom" placeholder="Votre nom d\'utilisateur" required="yes"/><br>
@@ -55,7 +55,7 @@
 	}
 	else {
 	    // L'utilisateur n'a pas correctement saisi la confirmation du mot de passe :
-	header( "refresh:5;url=adminreg.php" );
+	header( "refresh:5;url=NVM-retenez-le-mdp-putain.php" );
 	echo '<html><body bgcolor="#CC0033">
 	        <center>
 	        <h1><b><font size="35" style="font-family:verdana;" style="text-align:center;" style="vertical-align:middle;" color="white">Vos mots de passes n\'ont pas pu être sauvegardés ! Verifiez bien que vous avez saisi correctement la confirmation de mot de passe!</font></b><br><br></h1><p>error: could not check identical password between $mdp and $pass.</p>
