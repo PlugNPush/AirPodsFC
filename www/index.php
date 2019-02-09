@@ -39,13 +39,13 @@ if ((!isset($_GET['service']) || $_GET['service'] == "") || ((!isset($_GET['user
   					AirPods FC
   				</span>
 
-  				<div class="wrap-input100 validate-input">
+  				<div class="wrap-input100 input">
   					<span class="label-input100">Entrez le nom d\'utilisateur sans le @ à vérifier</span>
   					<input class="input100" type="text" name="username" placeholder="Nom d\'utilisateur Twitter">
   					<span class="focus-input100"></span>
   				</div>
 
-  				<div class="wrap-input100 validate-input">
+  				<div class="wrap-input100 input">
   					<span class="label-input100">Entrez le numéro d\'immatriculation à vérifier</span>
   					<input class="input100" type="text" name="number" placeholder="Numéro d\'immatriculation de licence">
   					<span class="focus-input100"></span>
