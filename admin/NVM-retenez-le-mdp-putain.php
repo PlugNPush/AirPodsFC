@@ -1,63 +1,66 @@
 <?php
-require_once dirname(__FILE__).'/../../config/config.php';
-if(!isset($_POST['mdp'])){
-echo'
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8" />
-        <title>CONNEXION</title>
-    </head>
-    <body>
-        <p>Administrateur du AirPods FC, connectez-vous.</p>
-        <form action="connexion.php" method="post">
-            <p>
-            <input type="email" name="mail" placeholder="Adresse mail" required="yes"/>
-            <input type="password" name="mdp" placeholder=\'Mot de passe\' required="yes"/>
-            <input type="submit" value="Valider" />
-            <br> Pas encore inscrit ? <a href=/inscription.php>Inscrivez-vous maintenant !</a>
-            </p>
-            </form>
-    </body>
-</html>';}else{
+	require_once dirname(__FILE__).'/../../../config/config.php';
+	if(!isset($_POST['pass']) AND !isset($_POST['mdp'])){
+	echo'
+	<!DOCTYPE html>
+	<html>
+	    <head>
+	        <meta charset="utf-8" />
+	        <title>INSCRIPTION</title>
+	    </head>
+	    <body>
+	        <p>Administrateurs du AirPods FC, inscrivez-vous maintenant !</p>
+	        <form action="adminreg.php" method="post">
+	            <p>
+	            <input type="email" name="mail" placeholder="Votre mail" required="yes"/><br>
+	            <input type="text" name="nom" placeholder="Votre nom d\'utilisateur" required="yes"/><br>
+	            <input type="password" name="mdp" placeholder="Votre mot de passe" required="yes"/>
+	            <input type="password" name="pass" placeholder="Confirmation du mot de passe" required="yes"/>
+	            <input type="submit" value="Valider" />
+	            <br> Vous avez déjà un compte ? <a href=/connexion.php>Connectez-vous !</a>
+	            </p>
+	            </form>
+	    </body>
+	</html>';
+	}else{
 
-  try {
-    $bdd = new PDO('mysql:host='.getDBHost().';dbname=AirPodsFC', getDBUsername(), getDBPassword(), array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8mb4"));
-  } catch(Exception $e) {
-  	exit ('Erreur while connecting to database: '.$e->getMessage());
-  }
-
-// Hachage du mot de passe
-$pass_hache = password_hash($_POST['mdp'], PASSWORD_DEFAULT);
-
-// Vérification des identifiants
-$req = $bdd->prepare('SELECT * FROM administrators WHERE email = ?;');
-$req->execute(array($_POST['mail']));
-$test = $req->fetch();
+	// Vérification de la validité des informations
+	try {
+	  $bdd = new PDO('mysql:host='.getDBHost().';dbname=AirPodsFC', getDBUsername(), getDBPassword(), array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8mb4"));
+	} catch(Exception $e) {
+		exit ('Erreur while connecting to database: '.$e->getMessage());
+	}
 
 
-$verify = password_verify($_POST['mdp'], $test['password']);
-if ($verify)
-{
-    session_start();
-    $_SESSION['id'] = $test['id'];
-    $_SESSION['nom'] = $test['nom'];
-    $_SESSION['email'] = $test['email'];
-    header( "refresh:10;url=backhome.php" );
-    echo '<center><h1><b><font size="7" face="verdana">Bienvenue parmi nous ', $test['nom'], ' !</font></b></h1><br>Reading data from the database, this might take up to 15 seconds.</p><img src=https://storage.googleapis.com/gweb-uniblog-publish-prod/original_images/SID_FB_001.gif height="450" width="600"></center>';
-}
-else
-{
-    header( "refresh:5;url=backco.php" );
-echo '<html><body bgcolor="#CC0033">
-        <center>
-        <h1><b><font size="35" style="font-family:verdana;" style="text-align:center;" style="vertical-align:middle;" color="white">Erreur ! Identifiant ou mot de passe incorrect !</font></b><br><br></h1><p>error: could not check identical password between pass and hash.</p>
+	// Insertion
+	$req = $bdd->prepare('INSERT INTO administrators(email, password, nom) VALUES(:mail, :pass, :nom)');
 
-<img src="https://i.pinimg.com/originals/45/41/38/454138b3dad33d8fc66082083e090d06.gif" >
-        </center></body></html>';
-}
+	if (isset($_POST['mdp']) AND isset($_POST['pass']) AND $_POST['mdp'] == $_POST['pass']) {
 
 
-}
 
-?>
+
+	    $pass_hache = password_hash($_POST['pass'], PASSWORD_DEFAULT);
+	    $req->execute(array(
+	    'mail' => $_POST['mail'],
+	    'pass' => $pass_hache,
+	    'nom' => $_POST['nom']
+	    ));
+
+	        // Retour à la connexion
+	header( "refresh:7;url=connexion.php" );
+	echo '<p><center><b> <font size="6" face="verdana">Veuillez patienter...</font></b><br> Writing new data into the database, this may take up to 10 seconds. You will be soon redirected to the login page.<br><br><br>
+
+	<img src="https://blog.pojo.me/wp-content/uploads/sites/140/2016/05/Optimized-WordPress-Installation.gif" ></center></p>';
+	}
+	else {
+	    // L'utilisateur n'a pas correctement saisi la confirmation du mot de passe :
+	header( "refresh:5;url=adminreg.php" );
+	echo '<html><body bgcolor="#CC0033">
+	        <center>
+	        <h1><b><font size="35" style="font-family:verdana;" style="text-align:center;" style="vertical-align:middle;" color="white">Vos mots de passes n\'ont pas pu être sauvegardés ! Verifiez bien que vous avez saisi correctement la confirmation de mot de passe!</font></b><br><br></h1><p>error: could not check identical password between $mdp and $pass.</p>
+
+	<img src="https://i.pinimg.com/originals/45/41/38/454138b3dad33d8fc66082083e090d06.gif" >
+	        </center></body></html>';
+	}}
+	?>
