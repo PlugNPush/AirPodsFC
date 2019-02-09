@@ -254,6 +254,7 @@ echo '<!DOCTYPE html>
         $req = $bdd->prepare('INSERT INTO licences(user, purchase, number, status) VALUES(:user, :purchase, :number, :status)');
         if ($_POST['type'] == "basic" || $_POST['type'] == "banned"){
           $number = rand(3000000, 9999999);
+          $date = date('Y-m-d H:i:s');
         } else if ($_POST['type'] == "vip" || $_POST['type'] == "red"){
           // 1st step is to check year gap
 
@@ -322,7 +323,7 @@ echo '<!DOCTYPE html>
               }
             }
 
-            echo '<h2 class="card-title"><br><br>La licence a bien été signée pour @' . $_POST['username2C'] . '!</h2><br><h3 class="card-description">LICENCE NUMÉRO ' . $number . '<br><a href="/../AirPodsFC/sign.php?id=' . $_POST['username2C'] . '"><img src="/../AirPodsFC/sign.php?id=' . $_POST['username2C'] . '" height="20%" width="30%" style="border-radius: 7px; overflow:hidden;"></a>';
+            echo '<h2 class="card-title"><br><br>La licence a bien été signée pour @' . $_POST['username2C'] . '!</h2><br><h3 class="card-description">LICENCE NUMÉRO ' . $number . '<br><a href="https://www.airpodsfc.fr/sign.php?id=' . $_GET['username2C'] . '"><img src="https://www.airpodsfc.fr/sign.php?id=' . $_GET['username2C'] . '" height="20%" width="30%" style="border-radius: 7px; overflow:hidden;"></a>';
           }
 
 

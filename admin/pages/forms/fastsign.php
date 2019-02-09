@@ -228,6 +228,7 @@ echo '<!DOCTYPE html>
         $req = $bdd->prepare('INSERT INTO licences(user, purchase, number, status) VALUES(:user, :purchase, :number, :status)');
         if ($_GET['type'] == "basic" || $_GET['type'] == "banned"){
           $number = rand(3000000, 9999999);
+          $date = date('Y-m-d H:i:s');
         } else if ($_GET['type'] == "vip" || $_GET['type'] == "red"){
           // 1st step is to check year gap
 
