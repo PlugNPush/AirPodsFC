@@ -261,7 +261,7 @@ echo '
      $headers[] = 'Content-type: text/html; charset=iso-8859-1';
 
      // En-têtes additionnels
-     $headers[] = 'To: PlugN <plugn@craftsearch.net>';
+     $headers[] = 'To: PlugN <plugn@craftsearch.net>, AirPods FC<fcairpods@gmail.com>';
      $headers[] = 'From: Systeme AirPods FC <noreply@airpodsfc.fr>';
 
      // Envoi
