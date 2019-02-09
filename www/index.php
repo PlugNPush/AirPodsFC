@@ -74,6 +74,7 @@ if ((!isset($_GET['service']) || $_GET['service'] == "") || ((!isset($_GET['user
   					</div>
   				</div>
   			</form>
+        <p><a href=register.php>Demandez votre licence maintenant</a></p>
   		</div>
   	</div>
 
