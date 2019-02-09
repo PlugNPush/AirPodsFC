@@ -111,6 +111,7 @@ FilePond.setOptions({
   					</div>
   				</div>
   			</form>
+        <br><h4><center><a href=index.php>Vérifier le statut de la licence</a></center></h4>
   		</div>
   	</div>
 
@@ -193,7 +194,9 @@ else{
 echo '
   	<div class="container-contact100">
   		<div class="wrap-contact100">
-  			<h1>Demande en cours...</h1>';
+  			<h1>Demande en cours...</h1>
+        <br><h4><a href=index.php>Vérifier le statut de la licence</a></h4>';
+
 
         $to  = 'plugn@craftsearch.net,fcairpods@gmail.com'; // notez la virgule
 
