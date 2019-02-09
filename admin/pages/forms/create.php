@@ -254,7 +254,7 @@ echo '<!DOCTYPE html>
         $req = $bdd->prepare('INSERT INTO licences(user, purchase, number, status) VALUES(:user, :purchase, :number, :status)');
         if ($_POST['type'] == "basic" || $_POST['type'] == "banned"){
           $number = rand(3000000, 9999999);
-          $date = date('Y-m-d H:i:s');
+          $date = $_POST['date'] . ' ' . date('H:i:s');
         } else if ($_POST['type'] == "vip" || $_POST['type'] == "red"){
           // 1st step is to check year gap
 
@@ -262,7 +262,7 @@ echo '<!DOCTYPE html>
           $reqtwo->execute();
           $testtwo = $reqtwo->fetch();
 
-          $date = date('Y-m-d H:i:s');
+          $date = $_POST['date'] . ' ' . date('H:i:s');
 
           $compareddate = new DateTime($testtwo["lastincrement"]);
           $now = new DateTime();
