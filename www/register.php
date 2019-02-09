@@ -51,7 +51,7 @@ if ((!isset($_GET['username']) || $_GET['username'] == "") && (!isset($_GET['pro
 
   				<div class="wrap-input100 validate-input">
   					<span class="label-input100">Déclarez le type et joignez la preuve ci-dessous</span>
-  					<input class="input100" type="text" name="number" placeholder="Série Spéciale (RED, VIP ou vide)">
+  					<input class="input100" type="text" name="number" placeholder="Série Spéciale (RED, VIP ou vide)" required=no>
   					<span class="focus-input100"></span>
   				</div>
 
