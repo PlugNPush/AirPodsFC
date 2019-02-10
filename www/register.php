@@ -32,9 +32,9 @@ if ((!isset($_GET['username']) || $_GET['username'] == "") && (!isset($_GET['pro
   <link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet">
 <link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css" rel="stylesheet">
 
-  <script src="js/picker.time.js"></script>
-  <script src="js/picker.date.js"></script>
-  <script src="js/picker.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
 
   </head>
   <body>
@@ -68,7 +68,7 @@ if ((!isset($_GET['username']) || $_GET['username'] == "") && (!isset($_GET['pro
 
           <div class="wrap-input100 validate-input">
   					<span class="label-input100">Date d\'achat</span>
-  					<input class="input100" type="text" id="datepicker" size="30" name="date" placeholder="AAAA-MM-JJ">
+  					<input class=flatpickr type="text" name="date" placeholder="AAAA-MM-JJ">
   					<span class="focus-input100"></span>
   				</div>
 
