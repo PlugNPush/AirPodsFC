@@ -31,6 +31,20 @@ if ((!isset($_GET['username']) || $_GET['username'] == "") && (!isset($_GET['pro
   <link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet">
   <link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet">
 <link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css" rel="stylesheet">
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#datepicker" ).datepicker();
+    $( "#format" ).on( "change", function() {
+      $( "#datepicker" ).datepicker( "option", "dateFormat", "yy-mm-dd" );
+    });
+  } );
+  </script>
+
   </head>
   <body>
   <script src="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.js"></script>
@@ -58,6 +72,12 @@ if ((!isset($_GET['username']) || $_GET['username'] == "") && (!isset($_GET['pro
           <div class="wrap-input100 validate-input">
   					<span class="label-input100">Preuve d\'achat : lien <a href="https://pasteboard.co">pasteboard.co</a></span>
   					<input class="input100" type="text" name="proof" placeholder="Lien pasteboard.co">
+  					<span class="focus-input100"></span>
+  				</div>
+
+          <div class="wrap-input100 validate-input">
+  					<span class="label-input100">Date d\'achat</span>
+  					<input class="input100" type="text" id="datepicker" size="30" name="date" placeholder="AAAA-MM-JJ">
   					<span class="focus-input100"></span>
   				</div>
 
