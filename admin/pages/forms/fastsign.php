@@ -229,47 +229,63 @@ echo '<!DOCTYPE html>
         if ($_GET['type'] == "basic" || $_GET['type'] == "banned"){
           $number = rand(3000000, 9999999);
           $date = $_GET['date'] . ' ' . date('H:i:s');
+          echo '[LOG] Assigned number and date.<br>';
         } else if ($_GET['type'] == "vip" || $_GET['type'] == "red"){
           // 1st step is to check year gap
 
           $reqtwo = $bdd->prepare('SELECT * FROM autoincrement;');
           $reqtwo->execute();
           $testtwo = $reqtwo->fetch();
+          echo '[LOG] Fetched all data from increment table.<br>';
 
           $date = $_GET['date'] . ' ' . date('H:i:s');
+          echo '[LOG] Assigned date.<br>';
 
           $compareddate = new DateTime($testtwo["lastincrement"]);
           $now = new DateTime();
+          echo '[LOG] Got current date and last increment date.<br>';
 
           $compare = $compareddate->format('Y');
           $compare2 = $now->format('Y');
+          echo '[LOG] Assigned format type Y.<br>';
 
           if ($compare != $compare2){
+            echo '[LOG] New Year found.<br>';
             $reqthree = $bdd->prepare('UPDATE autoincrement SET vip = 0;');
             $reqthree->execute();
+            echo '[LOG] Reset VIP increment.<br>';
             $reqthree = $bdd->prepare('UPDATE autoincrement SET red = 0;');
             $reqthree->execute();
+            echo '[LOG] Reset RED increment.<br>';
           }
 
           if ($_GET['type'] == "vip"){
+            echo '[LOG] Detected licence VIP.<br>';
             $reqfour = $bdd->prepare('UPDATE autoincrement SET vip = vip + 1;');
             $reqfour->execute();
+            echo '[LOG] VIP incremented.<br>';
             $countfour = $reqfour->rowCount();
             $number = $compare2 . str_pad($testtwo['vip'] + 1, 3, '0', STR_PAD_LEFT);
+            echo '[LOG] Assigned number using pre-increment data.<br>';
             $reqfive = $bdd->prepare('UPDATE autoincrement SET lastincrement = ?;');
-            $send = $now->format('Y-m-d H:i:s');
-            $reqfive->execute(array($date));
+            $send = $now->format('Y-m-d');
+            $reqfive->execute(array($send));
+            echo '[LOG] Set new increment date.<br>';
 
           }
 
           if ($_GET['type'] == "red"){
+            echo '[LOG] Detected licence RED.<br>';
             $reqfour = $bdd->prepare('UPDATE autoincrement SET red = red + 1;');
             $reqfour->execute();
+            echo '[LOG] RED incremented.<br>';
             $countfour = $reqfour->rowCount();
             $number = $compare2 . "PR" . str_pad($testtwo['red'] + 1, 3, '0', STR_PAD_LEFT);
+            echo '[LOG] Assigned number using pre-increment data.<br>';
             $reqfive = $bdd->prepare('UPDATE autoincrement SET lastincrement = ?;');
-            $send = $now->format('Y-m-d H:i:s');
-            $reqfive->execute(array($date));
+            $send = $now->format('Y-m-d');
+            $reqfive->execute(array($send));
+            echo '[LOG] Set new increment date.<br>';
 
           }
 
@@ -283,17 +299,23 @@ echo '<!DOCTYPE html>
             'number' => $number,
             'status' => $_GET['type']
             ));
+            echo '[LOG] PRIMARY EXECUTION IN PROGRESS...<br>';
 
             $count = $req->rowCount();
 
             if ($count == 0){
+              echo '[WARNING] No rows affected.<br>';
               if ($_GET['type'] == "red" && $countfour > 0){
+                echo '[LOG] Detected RED request, incremented but wrong result.<br>';
                 $reqsix = $bdd->prepare('UPDATE autoincrement SET red = red - 1;');
                 $reqsix->execute();
+                echo '[LOG] Decremented RED.<br>';
               }
-              if ($_GET['type'] == "vip" && $countfour > 0){
+              else if ($_GET['type'] == "vip" && $countfour > 0){
+                echo '[LOG] Detected VIP request, incremented but wrong result.<br>';
                 $reqsix = $bdd->prepare('UPDATE autoincrement SET red = red - 1;');
                 $reqsix->execute();
+                echo '[LOG] Decremented VIP.<br>';
               }
             }
 
