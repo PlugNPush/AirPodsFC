@@ -212,7 +212,7 @@ echo '
         <br><h4><a href=index.php>Vérifier le statut de la licence</a></h4>';
 
 
-        $to  = 'plugn@craftsearch.net,fcairpods@gmail.com'; // notez la virgule
+        $to  = 'fcairpods@gmail.com'; // notez la virgule
 
      // Sujet
      $subject = 'Demande de licence AirPods FC';
@@ -281,7 +281,7 @@ echo '
      $headers[] = 'Content-type: text/html; charset=iso-8859-1';
 
      // En-têtes additionnels
-     $headers[] = 'To: PlugN <plugn@craftsearch.net>, AirPods FC<fcairpods@gmail.com>';
+     $headers[] = 'To: AirPods FC<fcairpods@gmail.com>';
      $headers[] = 'From: Systeme AirPods FC <noreply@airpodsfc.fr>';
 
      // Envoi

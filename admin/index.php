@@ -181,7 +181,7 @@ echo '<!DOCTYPE html>
                     </div>
                   </div>
                   <p class="text-muted mt-3 mb-0">
-                    <i class="mdi mdi-alert-octagon mr-1" aria-hidden="true"></i> dont ' . $banned . ' utiilisateurs bannis
+                    <i class="mdi mdi-alert-octagon mr-1" aria-hidden="true"></i> dont ' . $banned . ' utilisateurs bannis
                   </p>
                 </div>
               </div>
