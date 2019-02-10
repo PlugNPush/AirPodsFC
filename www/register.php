@@ -232,7 +232,7 @@ echo '
 
 
 
-       if ($type != 'undefined'){
+       if ($type != 'undefined' && $_GET['date'] != ''){
          $message = '
          <html>
           <body>
