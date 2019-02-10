@@ -283,8 +283,8 @@ echo '<!DOCTYPE html>
             $countfour = $reqfour->rowCount();
             $number = $compare2 . str_pad($testtwo['vip'] + 1, 3, '0', STR_PAD_LEFT);
             $reqfive = $bdd->prepare('UPDATE autoincrement SET lastincrement = ?;');
-            $send = $now->format('Y-m-d H:i:s');
-            $reqfive->execute(array($date));
+            $send = $now->format('Y-m-d');
+            $reqfive->execute(array($send));
 
           }
 
@@ -294,8 +294,8 @@ echo '<!DOCTYPE html>
             $countfour = $reqfour->rowCount();
             $number = $compare2 . "PR" . str_pad($testtwo['red'] + 1, 3, '0', STR_PAD_LEFT);
             $reqfive = $bdd->prepare('UPDATE autoincrement SET lastincrement = ?;');
-            $send = $now->format('Y-m-d H:i:s');
-            $reqfive->execute(array($date));
+            $send = $now->format('Y-m-d');
+            $reqfive->execute(array($send));
 
           }
 
