@@ -36,7 +36,6 @@ if ((!isset($_GET['username']) || $_GET['username'] == "") && (!isset($_GET['pro
 <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 <script>
 flatpickr("#date", {
-  disableMobile: "true"
 });
   </script>
 
