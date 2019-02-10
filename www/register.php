@@ -71,7 +71,7 @@ flatpickr("#date", {
 
           <div class="wrap-input100 validate-input">
   					<span class="label-input100">Date d\'achat</span>
-  					<input class="input100" type="text" id="date" name="date" placeholder="AAAA-MM-JJ" required>
+  					<input class="input100" type="text" id="date" name="date" placeholder="AAAA-MM-JJ" required=yes>
   					<span class="focus-input100"></span>
   				</div>
 
