@@ -1,4 +1,5 @@
 <?php
+/*
 	require_once dirname(__FILE__).'/../../config/config.php';
 	if(!isset($_POST['pass']) AND !isset($_POST['mdp'])){
 	echo'
@@ -63,4 +64,5 @@
 	<img src="https://i.pinimg.com/originals/45/41/38/454138b3dad33d8fc66082083e090d06.gif" >
 	        </center></body></html>';
 	}}
+		*/
 	?>
