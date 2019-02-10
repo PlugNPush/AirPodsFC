@@ -35,7 +35,7 @@ if ((!isset($_GET['username']) || $_GET['username'] == "") && (!isset($_GET['pro
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 <script>
-flatpickr("#myID", {});
+flatpickr("#date", {});
   </script>
 
   </head>
