@@ -53,19 +53,19 @@ flatpickr("#date", {
 
   				<div class="wrap-input100 validate-input">
   					<span class="label-input100">Entrez le nom d\'utilisateur Twitter</span>
-  					<input class="input100" type="text" name="username" placeholder="Nom d\'utilisateur Twitter">
+  					<input class="input100" type="text" name="username" placeholder="Nom d\'utilisateur Twitter" required=yes>
   					<span class="focus-input100"></span>
   				</div>
 
   				<div class="wrap-input100 input">
   					<span class="label-input100">Déclarez le type et joignez la preuve ci-dessous</span>
-  					<input class="input100" type="text" name="number" placeholder="Série Spéciale (RED, VIP ou vide)">
+  					<input class="input100" type="text" name="number" placeholder="Série Spéciale (RED, VIP ou laissez vide)">
   					<span class="focus-input100"></span>
   				</div>
 
           <div class="wrap-input100 validate-input">
   					<span class="label-input100">Preuve d\'achat : lien <a href="https://pasteboard.co">pasteboard.co</a></span>
-  					<input class="input100" type="text" name="proof" placeholder="Lien pasteboard.co">
+  					<input class="input100" type="text" name="proof" placeholder="Lien pasteboard.co" required=yes>
   					<span class="focus-input100"></span>
   				</div>
 
@@ -208,7 +208,8 @@ else{
 echo '
   	<div class="container-contact100">
   		<div class="wrap-contact100">
-  			<h1>Demande en cours...</h1>
+  			<h1>Demande en attente de validation...</h1>
+        <h3>Veullez patienter jusqu\'à 72h qu\'un administrateur du AirPods FC signe votre licence. Afin de ne pas ralentir le processus de validation des autres licencse, veuillez ne pas re-soumettre votre demande avant un délai de 72h.</h3>
         <br><h4><a href=index.php>Vérifier le statut de la licence</a></h4>';
 
 
