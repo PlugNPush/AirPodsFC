@@ -209,7 +209,7 @@ echo '
   	<div class="container-contact100">
   		<div class="wrap-contact100">
   			<h1>Demande en attente de validation...</h1>
-        <h3>Veullez patienter jusqu\'à 72h qu\'un administrateur du AirPods FC signe votre licence. Afin de ne pas ralentir le processus de validation des autres licencse, veuillez ne pas re-soumettre votre demande avant un délai de 72h.</h3>
+        <h2>Veullez patienter jusqu\'à 72h qu\'un administrateur du AirPods FC signe votre licence. Afin de ne pas ralentir le processus de validation des autres licencse, veuillez ne pas re-soumettre votre demande avant un délai de 72h.</h2>
         <br><h4><a href=index.php>Vérifier le statut de la licence</a></h4>';
 
 
