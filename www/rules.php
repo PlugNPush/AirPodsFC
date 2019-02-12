@@ -33,7 +33,7 @@
       <h1>RÈGLEMENT OFFICIEL DU SITE AIRPODSFC.FR</h1>
 <br>
 <h4>Article 0 :</h4>
-<p>« Pour demander votre licence, vous devez remplir le formulaire de <a href="https://www.airpodsfc.fr/register.php">cette page</a>. Une fois votre demande envoyée, vous devez attendre que votre demande soit validée. Vous pouvez vérifier l\'état de la signature sur la page d\'acceuil. N\'envoyez pas plusieurs demandes consécutives pour le même compte avant un délai de 72h. Lorsque votre licence signée sera disponible, vous pourrez la télécharger en HD depuis la page d\'acceuil. »</p>
+<p>« Pour demander votre licence, vous devez remplir le formulaire de <a href="https://www.airpodsfc.fr/register.php">cette page</a>. Une fois votre demande envoyée, vous devez attendre que votre demande soit validée. Vous pouvez vérifier l\'état de la signature sur la page d\'accueil. N\'envoyez pas plusieurs demandes consécutives pour le même compte avant un délai de 72h. Lorsque votre licence signée sera disponible, vous pourrez la télécharger en HD depuis la page d\'accueil. »</p>
   <h4>Article 0 bis :</h4>
   <p>« Les administrateurs utilisent une technologie nommée FASTSIGN pour signer plus rapidement vos licences et diminuer votre temps d\'attente. Merci de bien remplir correctement le formulaire d\'enregistrement pour ne pas ralentir le processus. »</p>
 <h4>Article 1 :</h4>
