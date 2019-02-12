@@ -217,15 +217,25 @@ else{
   $select->execute(array($_GET['username']));
   $test = $select->fetch();
 
+  $att = $bdd->prepare('UPDATE requests SET attempts = ? WHERE user = ?');
+
+
+
   if (isset($test['id'])){
+    if ($test['attempts'] >= 5 && $test['status'] != "banned"){
+      $ban = $bdd->prepare('UPDATE requests SET status = ? WHERE user = ?');
+      $ban->execute(array("banned", $_GET['username']));
+    }
+
     if ($test['status'] == "banned"){
       echo '<div class="container-contact100">
         <div class="wrap-contact100">
           <h1>Utilisateur banni.</h1>
-          <p>Suite à un nombre trop élevé de demandes, vous avez été banni du AirPods FC de manière définitive. Aucune licence ne vous sera attribué.</p>
+          <p>Suite à un nombre trop élevé de demandes, vous avez été banni du AirPods FC de manière définitive. Aucune licence ne vous sera attribuée.</p>
           <br><h4><a href=index.php>Vérifier le statut de la licence</a></h4>';
     }
       else{
+        $att->execute(array($test['attempts'] + 1, $_GET['username']));
         echo '<div class="container-contact100">
       		<div class="wrap-contact100">
       			<h1>Demande déjà en cours...</h1>
