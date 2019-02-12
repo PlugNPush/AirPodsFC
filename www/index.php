@@ -181,10 +181,10 @@ echo '
             // echo '<br><h2>LICENCE NON TROUVÉE !</h2>';
             echo '<br><p>Aucune licence n\'a été délivrée par l\'équipe de validation du AirPods FC à @' . ltrim($_GET['username'], '0') . '.</p>';
             echo '<br><a href="sign.php?id=' . $_GET['username'] . '"><img src="sign.php?id=' . $_GET['username'] . '" height="50%" width="100%" style="border-radius: 7px; overflow:hidden;"></a>
-            <br>
+            <br><br><br>
             <p><center><a href="register.php">Demandez votre licence maintenant</a></center></p>';
           }
-echo '<br><br><p><a href="index.php">< retour</a></p> ';
+echo '<p><a href="index.php">< retour</a></p> ';
           }
         }
 
