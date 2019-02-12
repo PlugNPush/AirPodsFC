@@ -217,7 +217,7 @@ else{
   $select->execute(array($_GET['username']));
   $test = $select->fetch();
 
-  if isset($test['id']){
+  if (isset($test['id'])){
     echo '<div class="container-contact100">
   		<div class="wrap-contact100">
   			<h1>Demande déjà en cours...</h1>
