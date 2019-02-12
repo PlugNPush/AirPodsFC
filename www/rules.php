@@ -63,7 +63,7 @@
 <p>« Toute insulte envers un administrateur entraîne un bannissement définitif sans aucun sommation. »</p>
 
 En cas de non-respect de l’une de ces règles, vous serez définitivement banni du AirPods FC.
-<br>
+<br><br>
 <h4>Article L1 :</h4>
 <p>« Pour supprimer définitivement une licence conformément au RGPD, adressez-vous aux administrateurs via Twitter (<a href="https://www.twitter.com/brunopaiva_152">@brunopaiva_152</a>, <a href="https://www.twitter.com/FCAirPods">@FCAirPods</a>, <a href="https://www.twitter.com/PlugNTweet">@PlugNTweet</a>, <a href="https://www.twitter.com/AirPodsLeoDuff">@AirPodsLeoDuff</a>, <a href="https://www.twitter.com/Paku_oo">@Paku_oo</a> ou <a href="https://www.twitter.com/MINASTE_Support">@MINASTE_Support</a>) ou faites une demande écrite à l’adresse postale indiquée dans les mentions légales, accompagnée d’un justificatif de possession du compte Twitter concerné. Toute demande de suppression sera traitée dans un délai maximal de deux semaines. Dès que la suppression est effectuée, vous serez averti par Twitter uniquement (vous ne recevrez pas de courrier retour. Si votre compte Twitter est fermé, veuillez joindre votre adresse e-mail dans la demande). Vos données seront conservées dans des archives mais ne seront pas lisibles, elles seront enregistrées uniquement pour préserver la sécurité des systèmes informatiques du Groupe MINASTE, dans un délai maximal de 3 ans. »</p>
 
