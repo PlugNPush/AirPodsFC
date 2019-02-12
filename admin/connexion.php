@@ -121,12 +121,12 @@ if ($verify)
     $_SESSION['id'] = $test['id'];
     $_SESSION['nom'] = $test['nom'];
     $_SESSION['email'] = $test['email'];
-    header( "refresh:5;url=backhome.php" );
+    header( "refresh:0;url=backhome.php" );
     echo '<center><h1><b><font size="7" face="verdana">Bienvenue ', $test['nom'], ' !</font></b></h1><br>Reading data from the database, this might take up to 15 seconds.</p><img src=https://storage.googleapis.com/gweb-uniblog-publish-prod/original_images/SID_FB_001.gif height="450" width="600"></center>';
 }
 else
 {
-    header( "refresh:5;url=backco.php" );
+    header( "refresh:0;url=backco.php" );
 echo '<html><body bgcolor="#CC0033">
         <center>
         <h1><b><font size="35" style="font-family:verdana;" style="text-align:center;" style="vertical-align:middle;" color="white">Erreur ! Identifiant ou mot de passe incorrect !</font></b><br><br></h1><p>error: could not check identical password between pass and hash.</p>
