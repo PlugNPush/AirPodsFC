@@ -40,7 +40,7 @@ if ((!isset($_GET['service']) || $_GET['service'] == "") || ((!isset($_GET['user
   				</span>
 
   				<div class="wrap-input100 input">
-  					<span class="label-input100">Entrez le nom d\'utilisateur sans le @ à vérifier</span>
+  					<span class="label-input100">Entrez le nom d\'utilisateur Twitter à vérifier</span>
   					<input class="input100" type="text" name="username" placeholder="Nom d\'utilisateur Twitter">
   					<span class="focus-input100"></span>
   				</div>
