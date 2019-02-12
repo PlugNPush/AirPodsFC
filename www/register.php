@@ -214,7 +214,7 @@ else{
   $req = $bdd->prepare('INSERT INTO requests(user, date) VALUES(:user, :date)');
   //$req->execute(array($_GET['username']));
   $select = $bdd->prepare('SELECT * FROM requests WHERE user = ?');
-  $select->execute(array($_GET['username']));
+  $select->execute(array(str_replace("@", "", $_GET['username'])));
   $test = $select->fetch();
 
   $att = $bdd->prepare('UPDATE requests SET attempts = ? WHERE user = ?');
@@ -224,7 +224,7 @@ else{
   if (isset($test['id'])){
     if ($test['attempts'] >= 5 && $test['status'] != "banned"){
       $ban = $bdd->prepare('UPDATE requests SET status = ? WHERE user = ?');
-      $ban->execute(array("banned", $_GET['username']));
+      $ban->execute(array("banned", str_replace("@", "", $_GET['username'])));
     }
 
     if ($test['status'] == "banned"){
@@ -235,7 +235,7 @@ else{
           <br><h4><a href=index.php>Vérifier le statut de la licence</a></h4>';
     }
       else{
-        $att->execute(array($test['attempts'] + 1, $_GET['username']));
+        $att->execute(array($test['attempts'] + 1, str_replace("@", "", $_GET['username'])));
         echo '<div class="container-contact100">
       		<div class="wrap-contact100">
       			<h1>Demande déjà en cours...</h1>
@@ -252,7 +252,7 @@ echo '
         <br><h4><a href=index.php>Vérifier le statut de la licence</a></h4>';
 $date = date('Y-m-d H:i:s');
 $req->execute(array(
-'user' => $_GET['username'],
+'user' => str_replace("@", "", $_GET['username']),
 'date' => $date
 ));
 
