@@ -63,7 +63,7 @@ flatpickr("#date", {
   						<select class="selection-2" name="number">
   							<option>Basique</option>
   							<option>VIP</option>
-                <option>(RED)</option>
+                <option>RED</option>
   						</select>
   					</div>
   					<span class="focus-input100"></span>
