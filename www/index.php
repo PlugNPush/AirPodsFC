@@ -163,7 +163,7 @@ echo '
         if ($_GET['service'] == "Twitter") {
           if(isset($_GET['username']) && $_GET['username'] != ""){
             $req = $bdd->prepare('SELECT * FROM licences WHERE user = ?;');
-            $req->execute(array($_GET['username']));
+            $req->execute(array(str_replace("@", "", $_GET['username'])));
             $test = $req->fetch();
 
             $date = date('Y-m-d H:i:s');
@@ -179,8 +179,8 @@ echo '
           }
           else {
             // echo '<br><h2>LICENCE NON TROUVÉE !</h2>';
-            echo '<br><p>Aucune licence n\'a été délivrée par l\'équipe de validation du AirPods FC à @' . ltrim($_GET['username'], '0') . '.</p>';
-            echo '<br><a href="sign.php?id=' . $_GET['username'] . '"><img src="sign.php?id=' . $_GET['username'] . '" height="50%" width="100%" style="border-radius: 7px; overflow:hidden;"></a>
+            echo '<br><p>Aucune licence n\'a été délivrée par l\'équipe de validation du AirPods FC à @' . str_replace("@", "", $_GET['username']) . '.</p>';
+            echo '<br><a href="sign.php?id=' . str_replace("@", "", $_GET['username']) . '"><img src="sign.php?id=' . str_replace("@", "", $_GET['username']) . '" height="50%" width="100%" style="border-radius: 7px; overflow:hidden;"></a>
             <br><br>
             <p><center><a href="register.php">Demandez votre licence maintenant</a></center></p>';
           }
@@ -206,8 +206,8 @@ echo '<br><p><a href="index.php">< retour</a></p> ';
           }
           else {
             // echo '<br><h2>LICENCE NON TROUVÉE !</h2>';
-            echo '<br><p>Aucune licence n\'a été délivrée par l\'équipe de validation du AirPods FC à @' . ltrim($_GET['username'], '0') . '.</p>';
-            echo '<br><a href="sign.php?id=' . $test['user'] . '"><img src="sign.php?id=' . $test['user'] . '" height="50%" width="100%" style="border-radius: 7px; overflow:hidden;"></a>';
+            echo '<br><p>Aucune licence n\'a été délivrée par l\'équipe de validation du AirPods FC à @' . str_replace("@", "", $_GET['username']) . '.</p>';
+            echo '<br><a href="sign.php?id=' . str_replace("@", "", $_GET['username']) . '"><img src="sign.php?id=' . str_replace("@", "", $_GET['username']) . '" height="50%" width="100%" style="border-radius: 7px; overflow:hidden;"></a>';
           }
             echo '<br><br><p><a href="index.php">< retour</a></p> ';
         } else { echo 'error in licence transfer.';}}
