@@ -218,11 +218,21 @@ else{
   $test = $select->fetch();
 
   if (isset($test['id'])){
-    echo '<div class="container-contact100">
-  		<div class="wrap-contact100">
-  			<h1>Demande déjà en cours...</h1>
-        <p>Une demande pour cet utilisateur est déjà en attente. Veuillez ne pas re-demander la signature de la licence. En cas de non-signature après 72h, contactez les administrateurs.</p>
-        <br><h4><a href=index.php>Vérifier le statut de la licence</a></h4>';
+    if ($test['status'] == "banned"){
+      echo '<div class="container-contact100">
+        <div class="wrap-contact100">
+          <h1>Utilisateur banni.</h1>
+          <p>Suite à un nombre trop élevé de demandes, vous avez été banni du AirPods FC de manière définitive. Aucune licence ne vous sera attribué.</p>
+          <br><h4><a href=index.php>Vérifier le statut de la licence</a></h4>';
+    }
+      else{
+        echo '<div class="container-contact100">
+      		<div class="wrap-contact100">
+      			<h1>Demande déjà en cours...</h1>
+            <p>Une demande pour cet utilisateur est déjà en attente. Veuillez ne pas re-demander la signature de la licence. En cas de non-signature après 72h, contactez les administrateurs.</p>
+            <br><h4><a href=index.php>Vérifier le statut de la licence</a></h4>';
+      }
+
   } else {
 echo '
   	<div class="container-contact100">
