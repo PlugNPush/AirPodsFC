@@ -213,7 +213,7 @@ else{
   session_start();
   $req = $bdd->prepare('INSERT INTO requests(user, date) VALUES(:user, :date)');
   //$req->execute(array($_GET['username']));
-  $select = $bdd->prepare('SELECT FROM * requests WHERE user = ?');
+  $select = $bdd->prepare('SELECT * FROM requests WHERE user = ?');
   $select->execute(array($_GET['username']));
   $test = $select->fetch();
 
