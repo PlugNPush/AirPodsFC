@@ -231,7 +231,11 @@ echo '
         <p>Veullez patienter jusqu\'à 72h qu\'un administrateur du AirPods FC signe votre licence. Afin de ne pas ralentir le processus de validation des autres licences, veuillez ne pas re-soumettre votre demande avant un délai de 72h. Merci.</p>
         <br><h4><a href=index.php>Vérifier le statut de la licence</a></h4>';
 $date = date('Y-m-d H:i:s');
-$req->execute(array($_GET['username'], $date));
+$req->execute(array(
+'user' => $_GET['username'],
+'date' => $date
+));
+
         $to  = 'fcairpods@gmail.com'; // notez la virgule
 
      // Sujet
