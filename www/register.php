@@ -211,7 +211,19 @@ else{
   }
   // Démarrage de la session
   session_start();
+  $req = $bdd->prepare('INSERT INTO requests(user, date) VALUES(:user, :date)');
+  //$req->execute(array($_GET['username']));
+  $select = $bdd->prepare('SELECT FROM * requests WHERE user = ?');
+  $select->execute(array($_GET['username']));
+  $test = $select->fetch();
 
+  if isset($test['id']){
+    echo '<div class="container-contact100">
+  		<div class="wrap-contact100">
+  			<h1>Demande déjà en cours...</h1>
+        <p>Une demande pour cet utilisateur est déjà en attente. Veuillez ne pas re-demander la signature de la licence. En cas de non-signature après 72h, contactez les administrateurs.</p>
+        <br><h4><a href=index.php>Vérifier le statut de la licence</a></h4>';
+  } else {
 echo '
   	<div class="container-contact100">
   		<div class="wrap-contact100">
@@ -219,7 +231,7 @@ echo '
         <p>Veullez patienter jusqu\'à 72h qu\'un administrateur du AirPods FC signe votre licence. Afin de ne pas ralentir le processus de validation des autres licences, veuillez ne pas re-soumettre votre demande avant un délai de 72h. Merci.</p>
         <br><h4><a href=index.php>Vérifier le statut de la licence</a></h4>';
 
-
+$req->execute(array($_GET['username']));
         $to  = 'fcairpods@gmail.com'; // notez la virgule
 
      // Sujet
@@ -296,7 +308,7 @@ echo '
 
      // Envoi
      mail($to, $subject, $message, implode("\r\n", $headers));
-
+}
         echo '
 
   		</div>
