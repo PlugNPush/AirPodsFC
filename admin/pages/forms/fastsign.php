@@ -224,7 +224,15 @@ echo '<!DOCTYPE html>
               Signez la licence éléctroniquement pour la rendre valide.
             </p>';
 
-      if (isset($_GET['username2C'])){
+            $select = $bdd->prepare('SELECT * FROM requests WHERE user = ?');
+            $select->execute(array(str_replace("@", "", $_GET['username2C'])));
+            $test50 = $select->fetch();
+
+            $confirm = $bdd->prepare('DELETE FROM requests WHERE user = ?');
+
+
+
+      if (isset($_GET['username2C']) && isset($test50['id'])){
         $req = $bdd->prepare('INSERT INTO licences(user, purchase, number, status) VALUES(:user, :purchase, :number, :status)');
         if ($_GET['type'] == "basic" || $_GET['type'] == "banned"){
           $number = rand(3000000, 9999999);
@@ -318,8 +326,11 @@ echo '<!DOCTYPE html>
                 echo '[LOG] Decremented VIP.<br>';
               }
             }
-
+            $confirm->execute(array(str_replace("@", "", $_GET['username2C'])));
+            echo '[LOG] DELETED FROM IMPORT DB.<br>';
             echo '<h2 class="card-title"><br><br>La licence a bien été signée pour @' . $_GET['username2C'] . '!</h2><br><h3 class="card-description">LICENCE NUMÉRO ' . $number . '<br><a href="https://www.airpodsfc.fr/sign.php?id=' . $_GET['username2C'] . '"><img src="https://www.airpodsfc.fr/sign.php?id=' . $_GET['username2C'] . '" height="20%" width="30%" style="border-radius: 7px; overflow:hidden;"></a>';
+          } else {
+            echo '<h2 class="card-title"><br><br>La licence n\'a pas pu être signée pour' . $_GET['username2C'] . '.</h2><br><h3 class="card-description">L\'utilisateur a probablement été banni par le système automatique AirPods FC.<br>';
           }
 
 
