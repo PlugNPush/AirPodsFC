@@ -232,7 +232,7 @@ echo '<!DOCTYPE html>
 
 
 
-      if (isset($_GET['username2C']) && isset($test50['id'])){
+      if (isset($_GET['username2C']) && isset($test50['id']) && $test50['status'] != "banned"){
         $req = $bdd->prepare('INSERT INTO licences(user, purchase, number, status) VALUES(:user, :purchase, :number, :status)');
         if ($_GET['type'] == "basic" || $_GET['type'] == "banned"){
           $number = rand(3000000, 9999999);
