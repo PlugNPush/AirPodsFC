@@ -57,9 +57,15 @@ flatpickr("#date", {
   					<span class="focus-input100"></span>
   				</div>
 
-  				<div class="wrap-input100 input">
-  					<span class="label-input100">Déclarez le type et joignez la preuve ci-dessous</span>
-  					<input class="input100" type="text" name="number" placeholder="Série Spéciale (RED, VIP ou laissez vide)">
+          <div class="wrap-input100 input100-select">
+  					<span class="label-input100">Type de licence</span>
+  					<div>
+  						<select class="selection-2" name="number">
+  							<option>Basique</option>
+  							<option>VIP</option>
+                <option>(RED)</option>
+  						</select>
+  					</div>
   					<span class="focus-input100"></span>
   				</div>
 
@@ -221,11 +227,13 @@ echo '
 
      $user = str_replace("@", "", $_GET['username']);
      $type = 'undefined';
-     if ($_GET['number'] == '') {$type = 'basic';}
-     else if (strcasecmp($_GET['number'], 'vip') == 0) {
+     if (strcasecmp($_GET['number'], 'Basique') == 0) {
+       $type = 'basic';
+     }
+     else if (strcasecmp($_GET['number'], 'VIP') == 0) {
        $type = 'vip';
      }
-     else if (strcasecmp($_GET['number'], 'red') == 0){
+     else if (strcasecmp($_GET['number'], 'RED') == 0){
        $type = 'red';
      }
 
