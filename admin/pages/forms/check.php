@@ -341,7 +341,7 @@ $_SESSION = array();
 session_destroy();
 setcookie('login', '');
 setcookie('pass_hache', '');
-header( "refresh:5;url=connexion.php" );
+header( "refresh:0;url=connexion.php" );
 echo '<html></p><center>Connexion requise... Veuillez patienter.</center></html>';
 }
 ?>

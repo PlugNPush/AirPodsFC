@@ -232,7 +232,7 @@ $_SESSION = array();
 session_destroy();
 setcookie('login', '');
 setcookie('pass_hache', '');
-header( "refresh:5;url=connexion.php" );
+header( "refresh:0;url=connexion.php" );
 echo '<html></p><center>Connexion requise... Veuillez patienter.</center></html>';
 }
 
@@ -285,7 +285,7 @@ setcookie('pass_hache', '');
 }
 else
 {
-    header( "refresh:5;url=moncompte.php?edit" );
+    header( "refresh:0;url=moncompte.php?edit" );
 echo '<html><body bgcolor="#CC0033">
         <center>
         <h1><b><font size="35" style="font-family:verdana;" style="text-align:center;" style="vertical-align:middle;" color="white">Erreur ! Identifiant ou mot de passe incorrect !</font></b><br><br></h1><p>error: could not check identical password between pass and hash.</p>
@@ -358,7 +358,7 @@ setcookie('pass_hache', '');
 }
 else
 {
-    header( "refresh:5;url=moncompte.php?delete" );
+    header( "refresh:0;url=moncompte.php?delete" );
 echo '<html><body bgcolor="#CC0033">
         <center>
         <h1><b><font size="35" style="font-family:verdana;" style="text-align:center;" style="vertical-align:middle;" color="white">Erreur ! Mot de passe incorrect !</font></b><br><br></h1><p>error: could not check identical password between pass and hash.</p>
@@ -408,7 +408,7 @@ if ($verify)
 
 }
     else {
-    header( "refresh:5;url=moncompte.php?view" );
+    header( "refresh:0;url=moncompte.php?view" );
 echo '<html><body bgcolor="#CC0033">
         <center>
         <h1><b><font size="35" style="font-family:verdana;" style="text-align:center;" style="vertical-align:middle;" color="white">Erreur ! Mot de passe incorrect !</font></b><br><br></h1><p>error: could not verify given pass with hash.</p>
@@ -438,7 +438,7 @@ $_SESSION = array();
 session_destroy();
 setcookie('login', '');
 setcookie('pass_hache', '');
-header( "refresh:5;url=connexion.php" );
+header( "refresh:0;url=connexion.php" );
 echo '<html><body bgcolor="#CC0033">
         <center>
         <h1><b><font size="35" style="font-family:verdana;" style="text-align:center;" style="vertical-align:middle;" color="white">Erreur ! Vous n\'êtes pas connecté !</font></b><br><br></h1><p>error: could not check session variable.</p>
