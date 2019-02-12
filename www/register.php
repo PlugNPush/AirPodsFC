@@ -126,6 +126,7 @@ FilePond.setOptions({
   				</div>
   			</form>
         <br><h4><center><a href=index.php>Vérifier le statut de la licence</a></center></h4>
+        <br><h4><center><a href=rules.php>Prenez connaissance du réglement</a></center></h4>
   		</div>
   	</div>
 
