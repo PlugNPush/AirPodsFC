@@ -31,45 +31,45 @@
   	<div class="container-contact100">
   		<div class="wrap-contact100">
       <h1>RÈGLEMENT OFFICIEL DU SITE AIRPODSFC.FR</h1>
-
+<br>
 <h4>Article 1 :</h4>
-« Il est interdit de posséder plus d’une licence. »
+<p>« Il est interdit de posséder plus d’une licence. »</p>
 
 <h4>Article 2 :</h4>
-« Il est interdit de faire plus de 2 demandes. »
+<p>« Il est interdit de faire plus de 2 demandes. »</p>
 
 <h4>Article 3 :</h4>
-« Il est interdit de mentir sur la date d’achat. »
+<p>« Il est interdit de mentir sur la date d’achat. »</p>
 
 <h4>Article 4 :</h4>
-« Il est interdit de mentir sur son nom d’utilisateur Twitter. »
+<p>« Il est interdit de mentir sur son nom d’utilisateur Twitter. »</p>
 
 <h4>Article 5 :</h4>
-« Il est obligatoire de joindre une preuve. Le cas échéant, la demande sera ignorée. »
+<p>« Il est obligatoire de joindre une preuve d\'achat (photo ou facture). Le cas échéant, la demande sera ignorée. »</p>
 
 <h4>Article 6 :</h4>
-« Le trafic de licences est strictement interdit. »
+<p>« Le trafic de licences est strictement interdit. »</p>
 
 <h4>Article 7 :</h4>
-« Il est strictement interdit de modifier une licence. »
+<p>« Il est strictement interdit de modifier une licence. »</p>
 
 <h4>Article 8 :</h4>
-« Il est strictement interdit de cacher le numéro d’immatriculation lors d’affichages publics. »
+<p>« Il est strictement interdit de cacher le numéro d’immatriculation lors d’affichages publics. »</p>
 
 <h4>Article 9 :</h4>
-« Une priorité de licences est appliquée. Une licence (RED) ou VIP dominera toujours une licence grise, Bronze, Argent, Or ou Platine. »
+<p>« Une priorité de licences est appliquée. Une licence (RED) ou VIP dominera toujours une licence grise, Bronze, Argent, Or ou Platine. »</p>
 
 <h4>Article 10 :</h4>
-« Toute insulte envers un administrateur entraîne un bannissement définitif sans aucun sommation. »
+<p>« Toute insulte envers un administrateur entraîne un bannissement définitif sans aucun sommation. »</p>
 
 En cas de non-respect de l’une de ces règles, vous serez définitivement banni du AirPods FC.
 <br>
 <h1>Informations légales</h1>
 <h4>Article L1 :</h4>
-« Pour supprimer définitivement une licence conformément au RGPD, adressez-vous aux administrateurs *via Twitter* (@brunopaiva_152, @FCAirPods, @PlugNTweet, @AirPodsLeoDuff, @Paku_oo ou @MINASTE_Support) ou faites une demande écrite à l’adresse postale indiquée dans les mentions légales, accompagnée d’un justificatif de possession du compte Twitter concerné. Toute demande de suppression sera traitée dans un délai maximal de deux semaines. Dès que la suppression est effectuée, vous serez averti par Twitter uniquement (vous ne recevrez pas de courrier retour. Si votre compte Twitter est fermé, veuillez joindre votre adresse e-mail dans la demande). Vos données seront conservées dans des archives mais ne seront pas lisibles, elles seront enregistrées uniquement pour préserver la sécurité des systèmes informatiques du Groupe MINASTE, dans un délai maximal de 3 ans. »
+<p>« Pour supprimer définitivement une licence conformément au RGPD, adressez-vous aux administrateurs *via Twitter* (@brunopaiva_152, @FCAirPods, @PlugNTweet, @AirPodsLeoDuff, @Paku_oo ou @MINASTE_Support) ou faites une demande écrite à l’adresse postale indiquée dans les mentions légales, accompagnée d’un justificatif de possession du compte Twitter concerné. Toute demande de suppression sera traitée dans un délai maximal de deux semaines. Dès que la suppression est effectuée, vous serez averti par Twitter uniquement (vous ne recevrez pas de courrier retour. Si votre compte Twitter est fermé, veuillez joindre votre adresse e-mail dans la demande). Vos données seront conservées dans des archives mais ne seront pas lisibles, elles seront enregistrées uniquement pour préserver la sécurité des systèmes informatiques du Groupe MINASTE, dans un délai maximal de 3 ans. »</p>
 
 <h4>Article L2 : </h4>
-« Pour plus d’informations à propos du site web, merci de consulter les mentions légales et contacter \'hébergeur si besoin. »
+<p>« Pour plus d’informations à propos du site web, merci de consulter les mentions légales et contacter \'hébergeur si besoin. »</p>
 
 
 
