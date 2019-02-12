@@ -32,6 +32,9 @@
   		<div class="wrap-contact100">
       <h1>RÈGLEMENT OFFICIEL DU SITE AIRPODSFC.FR</h1>
 <br>
+<h4>Article 0 :</h4>
+<p>« Pour demander votre licence, vous devez remplir le formulaire de <a href="https://www.airpodsfc.fr/register.php">cette page</a>. Une fois votre demande envoyée, vous devez attendre que votre demande soit validée. Vous pouvez vérifier l\'état de la signature sur la page d\'acceuil. N\'envoyez pas plusieurs demandes consécutives pour le même compte avant un délai de 72h. Lorsque votre licence signée sera disponible, vous pourrez la télécharger en HD depuis la page d\'acceuil. »</p>
+
 <h4>Article 1 :</h4>
 <p>« Il est interdit de posséder plus d’une licence. »</p>
 
