@@ -217,11 +217,21 @@ else{
   $select->execute(array(str_replace("@", "", $_GET['username'])));
   $test = $select->fetch();
 
+  $sel = $bdd->prepare('SELECT * FROM licences WHERE user = ?');
+  $sel->execute(array(str_replace("@", "", $_GET['username'])));
+  $test2 = $sel->fetch();
+
   $att = $bdd->prepare('UPDATE requests SET attempts = ? WHERE user = ?');
 
+  if (isset($test2['id'])){
+    echo '<div class="container-contact100">
+      <div class="wrap-contact100">
+        <h1>Licence déjà enregistrée.</h1>
+        <p>Votre licence a déjà été signée. Rendez-vous sur la page d\'accueil pour la consulter.</p>
+        <br><h4><a href=index.php>Vérifier le statut de la licence</a></h4>';
+  }
 
-
-  if (isset($test['id'])){
+  else if (isset($test['id'])){
     if ($test['attempts'] >= 5 && $test['status'] != "banned"){
       $ban = $bdd->prepare('UPDATE requests SET status = ? WHERE user = ?');
       $ban->execute(array("banned", str_replace("@", "", $_GET['username'])));
