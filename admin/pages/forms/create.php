@@ -330,7 +330,7 @@ echo '<!DOCTYPE html>
             $confirm->execute(array(str_replace("@", "", $_GET['username2C'])));
             echo '<h2 class="card-title"><br><br>La licence a bien été signée pour @' . $_POST['username2C'] . '!</h2><br><h3 class="card-description">LICENCE NUMÉRO ' . $number . '<br><a href="https://www.airpodsfc.fr/sign.php?id=' . $_POST['username2C'] . '"><img src="https://www.airpodsfc.fr/sign.php?id=' . $_POST['username2C'] . '" height="20%" width="30%" style="border-radius: 7px; overflow:hidden;"></a>';
           } else {
-            echo '<h2 class="card-title"><br><br>La licence n\'a pas pu être signée pour @' . $_GET['username2C'] . '.</h2><br><h3 class="card-description">L\'utilisateur a probablement été banni par le système automatique AirPods FC.<br>';
+            echo '<h2 class="card-title"><br><br>La licence n\'a pas pu être signée pour @' . $_POST['username2C'] . '.</h2><br><h3 class="card-description">L\'utilisateur a probablement été banni par le système automatique AirPods FC.<br>';
           }
 
 
