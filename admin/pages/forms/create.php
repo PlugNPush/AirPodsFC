@@ -255,7 +255,7 @@ echo '<!DOCTYPE html>
 
           $confirm = $bdd->prepare('DELETE FROM requests WHERE user = ?');
 
-      if (isset($_POST['username2C']) && isset($_POST['date']) && isset($test50['id']) && $test50['status'] != "banned"){
+      if (isset($_POST['username2C']) && isset($_POST['date']) && $test50['status'] != "banned"){
         $req = $bdd->prepare('INSERT INTO licences(user, purchase, number, status) VALUES(:user, :purchase, :number, :status)');
         if ($_POST['type'] == "basic" || $_POST['type'] == "banned"){
           $number = rand(3000000, 9999999);
