@@ -250,7 +250,7 @@ echo '<!DOCTYPE html>
             </form>
           ';
           $select = $bdd->prepare('SELECT * FROM requests WHERE user = ?');
-          $select->execute(array(str_replace("@", "", $_GET['username2C'])));
+          $select->execute(array(str_replace("@", "", $_POST['username2C'])));
           $test50 = $select->fetch();
 
           $confirm = $bdd->prepare('DELETE FROM requests WHERE user = ?');
@@ -327,7 +327,8 @@ echo '<!DOCTYPE html>
                 $reqsix->execute();
               }
             }
-            $confirm->execute(array(str_replace("@", "", $_GET['username2C'])));
+            $confirm->execute(array(str_replace("@", "", $_POST['username2C'])));
+        echo $date;
             echo '<h2 class="card-title"><br><br>La licence a bien été signée pour @' . $_POST['username2C'] . '!</h2><br><h3 class="card-description">LICENCE NUMÉRO ' . $number . '<br><a href="https://www.airpodsfc.fr/sign.php?id=' . $_POST['username2C'] . '"><img src="https://www.airpodsfc.fr/sign.php?id=' . $_POST['username2C'] . '" height="20%" width="30%" style="border-radius: 7px; overflow:hidden;"></a>';
           } else {
             echo '<h2 class="card-title"><br><br>La licence n\'a pas pu être signée pour @' . $_POST['username2C'] . '.</h2><br><h3 class="card-description">L\'utilisateur a probablement été banni par le système automatique AirPods FC.<br>';
