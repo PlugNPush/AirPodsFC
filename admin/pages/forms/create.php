@@ -249,6 +249,8 @@ echo '<!DOCTYPE html>
               <button type="submit" class="btn btn-success mr-2">Signer la licence</button>
             </form>
           ';
+$bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+$bdd->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);  
           $select = $bdd->prepare('SELECT * FROM requests WHERE user = ?');
           $select->execute(array(str_replace("@", "", $_POST['username2C'])));
           $test50 = $select->fetch();
