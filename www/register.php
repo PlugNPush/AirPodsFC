@@ -70,7 +70,7 @@ flatpickr("#date", {
   				</div>
 
           <div class="wrap-input100 validate-input">
-  					<span class="label-input100">Preuve d\'achat : lien <a href="https://pasteboard.co">pasteboard.co</a></span>
+  					<span class="label-input100">Preuve d\'achat : lien <a href="https://pasteboard.co"><font color="blue">pasteboard.co</font></a></span>
   					<input class="input100" type="text" name="proof" placeholder="Lien pasteboard.co" required=yes>
   					<span class="focus-input100"></span>
   				</div>
