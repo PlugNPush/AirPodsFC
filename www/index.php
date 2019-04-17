@@ -45,6 +45,10 @@ if ((!isset($_GET['service']) || $_GET['service'] == "") || ((!isset($_GET['user
   					<span class="focus-input100"></span>
   				</div>
 
+          <div>
+            <p><center>---- OU ----</center></p>
+          </div>
+
   				<div class="wrap-input100 input">
   					<span class="label-input100">Entrez le numéro d\'immatriculation à vérifier</span>
   					<input class="input100" type="text" name="number" placeholder="Numéro d\'immatriculation de licence">
