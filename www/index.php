@@ -46,7 +46,7 @@ if ((!isset($_GET['service']) || $_GET['service'] == "") || ((!isset($_GET['user
   				</div>
 
           <div>
-            <p><center>---- OU ----</center></p>
+            <p><center><font color="grey">---- OU ----</font></center></p>
           </div>
 
   				<div class="wrap-input100 input">
@@ -56,7 +56,7 @@ if ((!isset($_GET['service']) || $_GET['service'] == "") || ((!isset($_GET['user
   				</div>
 
           <div>
-            <p><center>------------</center></p>
+            <p><center><font color="grey">------------</font></center></p>
           </div>
 
   				<div class="wrap-input100 input100-select">
