@@ -249,7 +249,7 @@ else{
         echo '<div class="container-contact100">
       		<div class="wrap-contact100">
       			<h1>Demande déjà en cours...</h1>
-            <p>Une demande pour cet utilisateur est déjà en attente. Veuillez ne pas re-demander la signature de la licence. En cas de non-signature après 72h, contactez les administrateurs.</p>
+            <p>Une demande pour cet utilisateur est déjà en attente. Veuillez ne pas re-demander la signature de la licence. En cas de non-signature après 72h, contactez les administrateurs.<br><b>IMPORTANT : NE RAFRAICHISSEZ PAS CETTE PAGE. POUR CONSULTER VOTRE LICENCE, UTILISEZ LE LIEN CI-DESSOUS.</b></p>
             <br><h4><a href=index.php>Vérifier le statut de la licence</a></h4>';
       }
 
@@ -258,7 +258,7 @@ echo '
   	<div class="container-contact100">
   		<div class="wrap-contact100">
   			<h1>Demande en attente de validation...</h1>
-        <p>Veullez patienter jusqu\'à 72h qu\'un administrateur du AirPods FC signe votre licence. Afin de ne pas ralentir le processus de validation des autres licences, veuillez ne pas re-soumettre votre demande avant un délai de 72h. Merci.</p>
+        <p>Veullez patienter jusqu\'à 72h qu\'un administrateur du AirPods FC signe votre licence. Afin de ne pas ralentir le processus de validation des autres licences, veuillez ne pas re-soumettre votre demande avant un délai de 72h. Merci.<br><b>IMPORTANT : NE RAFRAICHISSEZ PAS CETTE PAGE. POUR CONSULTER VOTRE LICENCE, UTILISEZ LE LIEN CI-DESSOUS.</b></p>
         <br><h4><a href=index.php>Vérifier le statut de la licence</a></h4>';
 $date = date('Y-m-d H:i:s');
 $req->execute(array(
