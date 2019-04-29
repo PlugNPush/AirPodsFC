@@ -241,7 +241,7 @@ else{
       echo '<div class="container-contact100">
         <div class="wrap-contact100">
           <h1>Utilisateur banni.</h1>
-          <p>Suite à un nombre trop élevé de demandes, vous avez été banni du AirPods FC de manière définitive. Aucune licence ne vous sera attribuée.</p>
+          <p>Suite à un nombre trop élevé de demandes, vous avez été banni du AirPods FC de manière définitive. Aucune licence ne vous sera attribuée.<br><b>On vous avait pourtant prévenu... Vous avez délibérément enfreint le réglement du AirPods FC en plus de générer du trafic inutile contraire au positionnement écologique d\'Apple. Vous ne méritez donc pas votre licence.</b></p>
           <br><h4><a href=index.php>Vérifier le statut de la licence</a></h4>';
     }
       else{
