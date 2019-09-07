@@ -32,12 +32,7 @@ if ((!isset($_GET['service']) || $_GET['service'] == "") || ((!isset($_GET['user
   <body>
 
 
-    <div class="wrap-contact100">
-    <span class="contact100-form-title">
-      Fermeture actée du AirPods FC.
-    </span>
-    <p>C\'est avec une grande tristesse que nous vous informons que la fermeture officielle du site web du AirPods FC aura lieu le 1er janvier 2020. Le site n\'aura pas de successeur ni d\'alternative. Vous retrouverez la communauté du AirPods FC sur Twitter: @AirPodsFC. Conformément à nos engagements, convictions et notre vision d\'un web plus libre, nous n\'avons pas vendu vos données et n\'avons recolleté que les données que vous avez vous-même saisi sur ce site Internet. La date de suppression définitive de toutes les données du site Internet airpodsfc.fr est prévue d\'ici le 31 janvier 2020. À compter de cette date, plus aucune demande de droit d\'accès, portabilité ou suppression ne pourra être traitée, car vos données auront été supprimées. Nous remercions la communauté du AirPods FC de nous avoir fait confiance et espérons vous revoir bientôt. Si toutefois vous souhaitez exercer un droit d\'accès, de portabilité ou de suppression anticipée, vous pouvez nous contacter à l\'adresse email contact@groupe-minaste.org. Merci d'avoir suivi cette aventure avec nous.</p>
-    </div>
+    
 
   	<div class="container-contact100">
   		<div class="wrap-contact100">
