@@ -32,7 +32,12 @@ if ((!isset($_GET['service']) || $_GET['service'] == "") || ((!isset($_GET['user
   <body>
 
 
-    
+  <div class="wrap-contact100">
+  <span class="contact100-form-title">
+    Fermeture actée du AirPods FC.
+  </span>
+  <p>C\'est </p>
+  </div>
 
   	<div class="container-contact100">
   		<div class="wrap-contact100">
