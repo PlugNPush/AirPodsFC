@@ -32,10 +32,8 @@ if ((!isset($_GET['service']) || $_GET['service'] == "") || ((!isset($_GET['user
   <body>
 
 
-  <div class="container-contact100">
     <div class="wrap-contact100">
     F.C.C.
-    </div>
     </div>
 
   	<div class="container-contact100">
