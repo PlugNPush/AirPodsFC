@@ -62,7 +62,7 @@ else {
 }
 
 } else {
-  echo'<br><br><center><form action="licence.php" method="post">
+  echo'<br><br><center><form action="efv.php" method="post">
       <p>
       <input type="text" name="username" placeholder="Username Twitter sans @" required="yes"/>
       <input type="submit" value="Vérifier mes données" />
