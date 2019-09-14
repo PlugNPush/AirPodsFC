@@ -9,10 +9,14 @@ try {
 // Démarrage de la session
 session_start();
 
+$req1 = $bdd->prepare('SELECT * FROM licences');
+$req1->execute(array($_SESSION['id']));
+$count = $req1->rowCount();
+
     // Zone de menu statique
 echo '<h1><b><font size="15" face="verdana">Groupe MINASTE - EFV AirPods FC</font></b></h1>';
 echo '<p>Bienvenue sur l\'Espace de Fin de Vie du AirPods FC. Nous construisons tous nos projets autour d\'une valeur clé : la liberté. Nous avons une vision d\'un Internet libre, auquel on doit pouvoir faire confiance et sur lequel ses acteurs se doivent d\'être transparents avec ses utilisateurs. Nous souhaitons un Internet où quand une entreprise annonce supprimer des données, elle le fait véritablement, sans astérisque. Aucune revente, aucune cession, aucun stockage ailleurs, chez nous supprimer = supprimer. Pour que vous puissiez en être absolument certain, nous avons créé l\'EFV (Espace de Fin de Vie). Il s\'agit d\'une page qui restera active un certain temps après la suppression des données pour que vous puissiez vérifier en temps réel que vos données ont bien été supprimés. Nous espérons vous revoir bientôt.</p>
-<br><h2><center>Il reste encore 248/248 licences qui n\'ont pas été supprimés. Prochaine vague de suppression prévue le 2 janvier 2019.<center></h2>';
+<br><h2><center>Il reste encore ' + $count + '/248 licences qui n\'ont pas été supprimés. Prochaine vague de suppression prévue le 2 janvier 2019.<center></h2>';
 
 if(isset($_POST['username'])){
   $req = $bdd->prepare('SELECT * FROM licences WHERE user = ?;');
