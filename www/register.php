@@ -46,8 +46,8 @@ flatpickr("#date", {
 
   	<div class="container-contact100">
   		<div class="wrap-contact100">
-  			<h1><b><font color="red">Enregistrement indisponible</font><b></h1>
-        <p>Suite à la décision de la fermeture du site Internet du AirPods FC le 1er janvier 2020, plus aucune demande d\'adhésion ne pourra être traitée à compter de samedi 14 septembre 23h00 CEST. Nous vous remercions pour votre compréhension.<br>
+  			<h1><b><font color="red">Enregistrement indisponible</font></b></h1><br>
+        <p>Suite à la décision de la fermeture du site Internet du AirPods FC le 1er janvier 2020, plus <b>aucune demande d\'adhésion ne pourra être traitée à compter de samedi 14 septembre 23h00 CEST</b>. Nous vous remercions pour votre compréhension.<br>
         <br><h4><center><a href=index.php>Vérifier le statut de la licence</a></center></h4>
         <br><h4><center><a href=rules.php>Prenez connaissance du réglement</a></center></h4>
   		</div>
