@@ -57,7 +57,7 @@ if(isset($_POST['username'])){
   }
 }
 else {
-  echo '<br><h2>VOS DONNÉES ONT ÉTÉ SUPPRIMÉS !</h2>';
+  echo '<br><h1><center>VOS DONNÉES ONT ÉTÉ SUPPRIMÉS !<center></h1>';
   echo '<br><p>Aucune donnée n\'a été trouvée pour l\'utilisateur @' . ltrim($_POST['username'], '0') . '.</p>';
 }
 
