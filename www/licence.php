@@ -24,11 +24,11 @@ if(isset($_POST['username'])){
   $now = new DateTime();
 
   if (isset($test['id'])){
-  echo '<h1><center>LICENCE AUTHENTIQUE AIRPODS FC</center></h1>';
-  echo '<p>Titulaire de la licence : @' . $test['user'];
-  echo '<br>Titulaire depuis ' . $compareddate->diff($now)->format("%y ans, %m mois, %d jours, %h heures et %i minutes");
-  echo '<br> IMMATRUCULATION DE LA LICENCE : ' . ltrim($test['number'], '0');
-  echo '<br> Statut de la licence : ' . $test['status'];
+  echo '<h1><center>VOS DONNÉES N\'ONT PAS ENCORE ÉTÉ SUPPRIMÉS</center></h1>';
+  echo '<p>Nom d\'utilisateur enregistré : @' . $test['user'];
+  echo '<br>Achat enregistré depuis ' . $compareddate->diff($now)->format("%y ans, %m mois, %d jours, %h heures et %i minutes");
+  echo '<br> NUMÉRO D\'IMMATRUCULATION : ' . ltrim($test['number'], '0');
+  echo '<br> Statut : ' . $test['status'];
   $dd = $compareddate->diff($now)->format("%y");
   if ($test['status'] == "basic"){
     if ($dd < 1){
@@ -52,19 +52,20 @@ if(isset($_POST['username'])){
     echo '<br><h2>LICENCE AIRPODS FC (RED) DÉLIVRÉE</h2>';
   }
   else if ($test['status'] == "banned"){
-    echo '<br><h2>VOUS AVEZ ÉTÉ BANNI DU AIRPODS FC</h2>';
+    echo '<br><h2>VOUS AVEZ ÉTÉ BANNI DU AIRPODS FC.</h2>
+    <p>Vous êtes également concerné par la suppression des données vous concernant. Vos informations de banissement seront également supprimés.';
   }
 }
 else {
-  echo '<br><h2>LICENCE NON TROUVÉE !</h2>';
-  echo '<br><p>Aucune licence n\'a été délivrée par l\'équipe de validation du AirPods FC à @' . ltrim($_POST['username'], '0') . '.</p>';
+  echo '<br><h2>VOS DONNÉES ONT ÉTÉ SUPPRIMÉS !</h2>';
+  echo '<br><p>Aucune donnée n\'a été trouvée pour l\'utilisateur @' . ltrim($_POST['username'], '0') . '.</p>';
 }
 
 } else {
   echo'<br><br><center><form action="licence.php" method="post">
       <p>
-      <input type="text" name="username" placeholder="Nom d\'utilisateur Twitter (sans @)" required="yes"/>
-      <input type="submit" value="Vérifier la licence" />
+      <input type="text" name="username" placeholder="Username Twitter sans @" required="yes"/>
+      <input type="submit" value="Vérifier mes données" />
       </p>
       </form></center>';
 }
