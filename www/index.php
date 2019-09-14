@@ -89,7 +89,7 @@ if ((!isset($_GET['service']) || $_GET['service'] == "") || ((!isset($_GET['user
   					</div>
   				</div>
   			</form>
-        <br><h4><center><a href=register.php><strong>Demandez votre licence maintenant</strong></a></center></h4>
+        <br><h4><center><strong><font color="red">Enregistrement indisponible</font></strong></center></h4>
         <br><h4><center><a href=rules.php>Réglement du site et des licences</a></center></h4>
   		</div>
   	</div>
@@ -197,7 +197,7 @@ echo '
             echo '<br><p>Aucune licence n\'a été délivrée par l\'équipe de validation du AirPods FC à @' . str_replace("@", "", $_GET['username']) . '.</p>';
             echo '<br><a href="sign.php?id=' . str_replace("@", "", $_GET['username']) . '"><img src="sign.php?id=' . str_replace("@", "", $_GET['username']) . '" height="50%" width="100%" style="border-radius: 7px; overflow:hidden;"></a>
             <br><br>
-            <p><center><a href="register.php">Demandez votre licence maintenant</a></center></p>';
+            <br><h4><center><strong><font color="red">Enregistrement indisponible</font></strong></center></h4>';
           }
 echo '<br><p><a href="index.php">< retour</a></p> ';
           }
