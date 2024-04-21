@@ -1,5 +1,5 @@
 <?php
-require_once dirname(__FILE__).'/../../../../config/config.php';
+require_once dirname(__FILE__).'/../../../../../config/config.php';
 try {
   $bdd = new PDO('mysql:host='.getDBHost().';dbname=AirPodsFC', getDBUsername(), getDBPassword(), array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8mb4"));
 } catch(Exception $e) {
@@ -16,7 +16,7 @@ if (isset($_SESSION['id']) && $_SESSION['id'] != ''){
     $test = $req->fetch();
 
     $req1 = $bdd->prepare('SELECT * FROM licences');
-    $req1->execute(array($_SESSION['id']));
+    $req1->execute();
     $count = $req1->rowCount();
     $test1 = $req1->fetch();
 
@@ -33,7 +33,7 @@ if (isset($_SESSION['id']) && $_SESSION['id'] != ''){
     $red = $req4->rowCount();
 
     $req5 = $bdd->prepare('SELECT * FROM administrators');
-    $req5->execute(array('red'));
+    $req5->execute();
     $admin = $req5->rowCount();
 
 echo '<!DOCTYPE html>
@@ -263,12 +263,12 @@ echo '<!DOCTYPE html>
               echo '<br><p>Titulaire de la licence :</p> <h3>@' . $test['user'] . '</h3>';
               echo '<br>IMMATRICULATION DE LA LICENCE : <h4>' . ltrim($test['number'], '0') . '</h4>';
               echo '<br><p>Titulaire depuis ' . $compareddate->diff($now)->format("%y ans, %m mois, %d jours, %h heures et %i minutes</p>");
-              echo '<br><a href="https://www.airpodsfc.fr/sign.php?id=' . $test['user'] . '"><img src="https://www.airpodsfc.fr/sign.php?id=' . $test['user'] . '" height="50%" width="100%" style="border-radius: 7px; overflow:hidden;"></a>';
+              echo '<br><a href="https://blackmirror.plugn.fr/airpodsfc.fr/www/sign.php?id=' . $test['user'] . '"><img src="https://blackmirror.plugn.fr/airpodsfc.fr/www/sign.php?id=' . $test['user'] . '" height="50%" width="100%" style="border-radius: 7px; overflow:hidden;"></a>';
             }
             else {
               // echo '<br><h2>LICENCE NON TROUVÉE !</h2>';
               echo '<br><p>Aucune licence n\'a été délivrée par l\'équipe de validation du AirPods FC à @' . ltrim($_GET['username'], '0') . '.</p>';
-              echo '<br><a href="https://www.airpodsfc.fr/sign.php?id=' . $test['user'] . '"><img src="https://www.airpodsfc.fr/sign.php?id=' . $test['user'] . '" height="50%" width="100%" style="border-radius: 7px; overflow:hidden;"></a>';
+              echo '<br><a href="https://blackmirror.plugn.fr/airpodsfc.fr/www/sign.php?id=' . $test['user'] . '"><img src="https://blackmirror.plugn.fr/airpodsfc.fr/www/sign.php?id=' . $test['user'] . '" height="50%" width="100%" style="border-radius: 7px; overflow:hidden;"></a>';
             }
             }
           }

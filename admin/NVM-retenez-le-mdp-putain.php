@@ -1,6 +1,6 @@
 <?php
 /*
-	require_once dirname(__FILE__).'/../../config/config.php';
+	require_once dirname(__FILE__).'/../../../config/config.php';
 	if(!isset($_POST['pass']) AND !isset($_POST['mdp'])){
 	echo'
 	<!DOCTYPE html>

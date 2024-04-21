@@ -1,6 +1,6 @@
 <?php
 // Connexion à la base de données
-require_once dirname(__FILE__).'/../../config/config.php';
+require_once dirname(__FILE__).'/../../../config/config.php';
 try {
   $bdd = new PDO('mysql:host='.getDBHost().';dbname=AirPodsFC', getDBUsername(), getDBPassword(), array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8mb4"));
 } catch(Exception $e) {
@@ -10,7 +10,7 @@ try {
 session_start();
 
 $req1 = $bdd->prepare('SELECT * FROM licences');
-$req1->execute(array($_SESSION['id']));
+$req1->execute();
 $count = $req1->rowCount();
 
     // Zone de menu statique

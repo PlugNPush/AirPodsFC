@@ -1,5 +1,5 @@
 <?php
-require_once dirname(__FILE__).'/../../../../config/config.php';
+require_once dirname(__FILE__).'/../../../../../config/config.php';
 try {
   $bdd = new PDO('mysql:host='.getDBHost().';dbname=AirPodsFC', getDBUsername(), getDBPassword(), array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8mb4"));
 } catch(Exception $e) {
@@ -16,7 +16,7 @@ if (isset($_SESSION['id']) && $_SESSION['id'] != ''){
     $test = $req->fetch();
 
     $req1 = $bdd->prepare('SELECT * FROM licences');
-    $req1->execute(array($_SESSION['id']));
+    $req1->execute();
     $count = $req1->rowCount();
     $test1 = $req1->fetch();
 
@@ -33,7 +33,7 @@ if (isset($_SESSION['id']) && $_SESSION['id'] != ''){
     $red = $req4->rowCount();
 
     $req5 = $bdd->prepare('SELECT * FROM administrators');
-    $req5->execute(array('red'));
+    $req5->execute();
     $admin = $req5->rowCount();
 
 echo '<!DOCTYPE html>
